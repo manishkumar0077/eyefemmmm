@@ -1,22 +1,20 @@
-# Welcome to your Lovable project
+# Welcome to EyeFemm Project
 
 ## Project info
 
-**URL**: https://lovable.dev/projects/8af877f5-8acc-4889-8720-8075e37a26d4
+**URL**: [Project URL will be added upon deployment]
 
 ## How can I edit this code?
 
 There are several ways of editing your application.
 
-**Use Lovable**
+**Use the Development Environment**
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/8af877f5-8acc-4889-8720-8075e37a26d4) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
+Follow the instructions below to set up the development environment and make changes to the project.
 
 **Use your preferred IDE**
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+If you want to work locally using your own IDE, you can clone this repo and push changes.
 
 The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
 
@@ -62,8 +60,8 @@ This project is built with .
 
 ## How can I deploy this project?
 
-Simply open [Lovable](https://lovable.dev/projects/8af877f5-8acc-4889-8720-8075e37a26d4) and click on Share -> Publish.
+Follow your preferred deployment method. We recommend using Netlify or Vercel for easy deployment.
 
 ## I want to use a custom domain - is that possible?
 
-We don't support custom domains (yet). If you want to deploy your project under your own domain then we recommend using Netlify. Visit our docs for more details: [Custom domains](https://docs.lovable.dev/tips-tricks/custom-domain/)
+You can use a custom domain by following the instructions provided by your hosting service (such as Netlify or Vercel).

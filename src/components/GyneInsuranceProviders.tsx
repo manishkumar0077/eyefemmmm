@@ -56,28 +56,28 @@ const fallbackFeaturedProviders = [
   {
     id: "1",
     name: "Central Government Health Scheme (CGHS)",
-    image_url: "/lovable-uploads/22774699-5502-4b25-994c-eeb2d3cf91ff.png",
+    image_url: "/eyefemm-uploads/22774699-5502-4b25-994c-eeb2d3cf91ff.png",
     sort_order: 1,
     created_at: new Date().toISOString()
   },
   {
     id: "2",
     name: "Delhi Government Employees Health Scheme (DGEHS)",
-    image_url: "/lovable-uploads/2b09fcb1-f9aa-4d77-92b3-845e510b2f97.png",
+    image_url: "/eyefemm-uploads/2b09fcb1-f9aa-4d77-92b3-845e510b2f97.png",
     sort_order: 2,
     created_at: new Date().toISOString()
   },
   {
     id: "3",
     name: "Municipal Corporation of Delhi (MCD)",
-    image_url: "/lovable-uploads/7541ab82-360c-4f9c-af5e-152356a67736.png",
+    image_url: "/eyefemm-uploads/7541ab82-360c-4f9c-af5e-152356a67736.png",
     sort_order: 3,
     created_at: new Date().toISOString()
   },
   {
     id: "4",
     name: "New Delhi Municipal Council (NDMC)",
-    image_url: "/lovable-uploads/0f493370-27f4-4d29-b3f9-da336d50b1ea.png",
+    image_url: "/eyefemm-uploads/0f493370-27f4-4d29-b3f9-da336d50b1ea.png",
     sort_order: 4,
     created_at: new Date().toISOString()
   }

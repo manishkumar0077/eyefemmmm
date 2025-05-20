@@ -53,13 +53,13 @@ const SpecialitiesSpecialtyChoice: React.FC<Props> = ({ onSelectDoctor }) => {
             id: -1,
             name: 'Dr. Sanjeev Lehri',
             specialization: 'Ophthalmologist & Eye Surgeon',
-            image_url: '/lovable-uploads/4f0ab2f1-cfac-48ce-9d14-205a833d4973.png'
+            image_url: '/eyefemm-uploads/4f0ab2f1-cfac-48ce-9d14-205a833d4973.png'
           },
           {
             id: -2,
             name: 'Dr. Nisha Bhatnagar',
             specialization: 'Gynecologist & Fertility Specialist',
-            image_url: '/lovable-uploads/8205aaa8-556e-4663-be5d-9619f8b8ddeb.png'
+            image_url: '/eyefemm-uploads/8205aaa8-556e-4663-be5d-9619f8b8ddeb.png'
           }
         ];
         setSpecialities(defaultDoctors);
@@ -78,13 +78,13 @@ const SpecialitiesSpecialtyChoice: React.FC<Props> = ({ onSelectDoctor }) => {
           id: -1,
           name: 'Dr. Sanjeev Lehri',
           specialization: 'Ophthalmologist & Eye Surgeon',
-          image_url: '/lovable-uploads/4f0ab2f1-cfac-48ce-9d14-205a833d4973.png'
+          image_url: '/eyefemm-uploads/4f0ab2f1-cfac-48ce-9d14-205a833d4973.png'
         },
         {
           id: -2,
           name: 'Dr. Nisha Bhatnagar',
           specialization: 'Gynecologist & Fertility Specialist',
-          image_url: '/lovable-uploads/8205aaa8-556e-4663-be5d-9619f8b8ddeb.png'
+          image_url: '/eyefemm-uploads/8205aaa8-556e-4663-be5d-9619f8b8ddeb.png'
         }
       ];
       setSpecialities(defaultDoctors);

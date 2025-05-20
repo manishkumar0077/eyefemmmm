@@ -46,7 +46,7 @@ const Gallery = () => {
           <div className="container mx-auto px-4 py-3 flex items-center justify-between">
             <Link to="/" className="flex items-center space-x-2">
               <img 
-                src="/lovable-uploads/6c43213d-6d60-4790-b8ff-d662e634ee59.png" 
+                src="/eyefemm-uploads/6c43213d-6d60-4790-b8ff-d662e634ee59.png" 
                 alt="EyeFem Clinic" 
                 className="h-14 w-auto object-contain" 
               />

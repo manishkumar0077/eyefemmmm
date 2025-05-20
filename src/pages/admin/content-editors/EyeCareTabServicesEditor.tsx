@@ -511,7 +511,7 @@ export const EyeCareTabServicesEditor = () => {
                                 className="w-full h-full object-contain"
                                 onError={(e) => {
                                   console.error("Image failed to load");
-                                  e.currentTarget.src = "/lovable-uploads/default-image.png";
+                                  e.currentTarget.src = "/eyefemm-uploads/default-image.png";
                                 }}
                               />
                             </div>

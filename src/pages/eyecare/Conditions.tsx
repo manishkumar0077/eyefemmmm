@@ -41,7 +41,7 @@ const EyeCareConditions: React.FC = () => {
 
   const handleImageError = (e: React.SyntheticEvent<HTMLImageElement, Event>) => {
     console.log("Image failed to load:", e.currentTarget.src);
-    e.currentTarget.src = "/lovable-uploads/default-image.png";
+    e.currentTarget.src = "/eyefemm-uploads/default-image.png";
   };
 
     const { testimonials, isLoading: testimonialsLoading } = useEyeTestimonials();

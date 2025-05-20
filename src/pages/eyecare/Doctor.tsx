@@ -38,7 +38,7 @@ const EyeCareDoctor = () => {
   const { details, isLoading: detailsLoading } = useEyeCareDetails();
   
   const handleImageError = (e: React.SyntheticEvent<HTMLImageElement, Event>) => {
-    e.currentTarget.src = "/lovable-uploads/default-image.png";
+    e.currentTarget.src = "/eyefemm-uploads/default-image.png";
   };
   
   return (
@@ -221,7 +221,7 @@ const EyeCareDoctor = () => {
                           data-aos-duration="600"
                         >
                           <img 
-                            src="/lovable-uploads/8254b67b-a23f-4dd5-b85d-c09b407f859c.png" 
+                            src="/eyefemm-uploads/8254b67b-a23f-4dd5-b85d-c09b407f859c.png" 
                             alt="Dr. Lehri with patient" 
                             className="w-full h-48 md:h-64 object-cover transition-transform duration-500 hover:scale-110" 
                           />
@@ -237,7 +237,7 @@ const EyeCareDoctor = () => {
                           data-aos-duration="600"
                         >
                           <img 
-                            src="/lovable-uploads/dd1fa9b7-e87a-4a71-b85e-8eda19f05600.png" 
+                            src="/eyefemm-uploads/dd1fa9b7-e87a-4a71-b85e-8eda19f05600.png" 
                             alt="Dr. Lehri examining patient" 
                             className="w-full h-48 md:h-64 object-cover transition-transform duration-500 hover:scale-110" 
                           />
@@ -326,7 +326,7 @@ const EyeCareDoctor = () => {
                       data-aos-duration="600"
                     >
                       <img 
-                        src="/lovable-uploads/fb9680b4-f1d5-45ff-a9dd-2b5e8f7a9e9e.png" 
+                        src="/eyefemm-uploads/fb9680b4-f1d5-45ff-a9dd-2b5e8f7a9e9e.png" 
                         alt="Eye examination" 
                         className="w-full h-64 object-cover transition-transform duration-500 hover:scale-110" 
                         onError={handleImageError}
@@ -343,7 +343,7 @@ const EyeCareDoctor = () => {
                       data-aos-duration="600"
                     >
                       <img 
-                        src="/lovable-uploads/eye-surgery.jpg" 
+                        src="/eyefemm-uploads/eye-surgery.jpg" 
                         alt="Eye surgery" 
                         className="w-full h-64 object-cover transition-transform duration-500 hover:scale-110" 
                         onError={handleImageError}
@@ -360,7 +360,7 @@ const EyeCareDoctor = () => {
                       data-aos-duration="600"
                     >
                       <img 
-                        src="/lovable-uploads/doctor-patient.jpg" 
+                        src="/eyefemm-uploads/doctor-patient.jpg" 
                         alt="Doctor with patient" 
                         className="w-full h-64 object-cover transition-transform duration-500 hover:scale-110" 
                         onError={handleImageError}
@@ -534,7 +534,7 @@ const EyeCareDoctor = () => {
                   </div>
                 ) : (
                 <div className="overflow-hidden rounded-lg shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
-                  <img src="/lovable-uploads/fb9680b4-f1d5-45ff-a9dd-2b5e8f7a9e9e.png" alt="Advanced eye examination equipment" className="w-full h-72 object-cover transition-transform duration-500 hover:scale-110" />
+                  <img src="/eyefemm-uploads/fb9680b4-f1d5-45ff-a9dd-2b5e8f7a9e9e.png" alt="Advanced eye examination equipment" className="w-full h-72 object-cover transition-transform duration-500 hover:scale-110" />
                   <div className="p-4 bg-white">
                     <h3 className="font-bold text-lg text-eyecare">Advanced Diagnostic Testing</h3>
                     <p className="text-gray-600">Early detection of eye conditions with cutting-edge equipment</p>
