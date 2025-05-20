@@ -25,40 +25,22 @@ const GynecologyHealth = () => {
   return (
     <GynecologyLayout>
           {/* Hero Section */}
-          <section className="bg-gradient-gynecology text-white py-12 sm:py-16 md:py-24">
-            <div className="container mx-auto px-4 sm:px-6 max-w-6xl">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-                <div className="order-2 md:order-1" data-aos="fade-right">
-                  <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
-                    Women's Health & Fertility Care
-                  </h1>
-                  <p className="text-base sm:text-lg mb-6 leading-relaxed">
-                    Comprehensive gynecological and fertility services with personalized care by Dr. Nisha Bhatnagar.
-                  </p>
-                  <div className="flex flex-wrap gap-4">
-                    <Link to="/gynecology/appointment">
-                      <Button className="rounded-full bg-white text-gynecology hover:bg-white/90 px-6 py-3 text-sm sm:text-base font-medium shadow-md transition-all duration-300 hover:shadow-lg hover:scale-105">
-                        Book an Appointment
-                      </Button>
-                    </Link>
-                    <Link to="#services">
-                      <Button className="rounded-full bg-transparent border border-white text-white hover:bg-white/10 px-6 py-3 text-sm sm:text-base font-medium transition-all duration-300 hover:shadow-lg hover:scale-105">
-                        Women's Health Issues
-                      </Button>
-                    </Link>
-                  </div>
-                </div>
-                <div className="order-1 md:order-2" data-aos="fade-left">
-                  <div className="overflow-hidden rounded-lg shadow-xl transition-all duration-300 hover:shadow-2xl hover:scale-[1.02]">
-                    <img 
-                      src="/lovable-uploads/woman-doctor-consultation.jpg" 
-                      alt="Doctor consultation with female patient" 
-                      className="w-full h-auto transform transition-transform duration-700 hover:scale-110"
-                      onError={(e) => {
-                        e.currentTarget.src = "/lovable-uploads/doctor-consultation.jpg";
-                      }}
-                    />
-                  </div>
+          <section className="relative bg-cover bg-center py-20 md:py-32 lg:py-40 text-white" style={{ backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/lovable-uploads/e19346cc-18a9-4b17-b700-9f1aa67debb4.jpg")' }}>
+            <div className="absolute inset-0 bg-gradient-to-r from-gynecology/90 to-purple-800/90 mix-blend-multiply"></div>
+            <div className="container mx-auto px-4 sm:px-6 max-w-6xl relative z-10">
+              <div className="max-w-3xl">
+                <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 leading-tight">
+                  Women's Health & Fertility Care
+                </h1>
+                <p className="text-lg sm:text-xl md:text-2xl mb-8 leading-relaxed max-w-2xl">
+                  Comprehensive gynecological and fertility services with personalized care by Dr. Nisha Bhatnagar.
+                </p>
+                <div className="flex flex-wrap gap-4">
+                  <Link to="/gynecology/appointment">
+                    <Button className="rounded-full bg-white text-gynecology hover:bg-white/90 px-8 py-6 text-base sm:text-lg font-semibold shadow-lg transition-all duration-300 hover:shadow-xl hover:scale-105">
+                      Book an Appointment
+                    </Button>
+                  </Link>
                 </div>
               </div>
             </div>
