@@ -87,23 +87,16 @@ const EyeCareDoctor = () => {
                     </Link>
                   </div>
                 </div>
-                <div 
-                  className="flex items-center justify-center rounded-full overflow-hidden border-4 border-white shadow-xl w-[200px] h-[200px] sm:w-[250px] sm:h-[250px] md:w-[300px] md:h-[300px] mx-auto transition-all duration-300 hover:shadow-2xl hover:scale-105 order-1 md:order-2 mb-6 md:mb-0" 
-                  data-aos="fade-left"
-                  data-aos-duration="800"
-                  data-aos-easing="ease-out-cubic"
-                  data-aos-delay="200"
-                >
-                  <img 
-                    src={profile?.image_url || "https://i.ibb.co/jPnBTf4N/pppp.jpg"} 
-                    alt="Dr Sanjeev Lehri eyecare" 
-                    className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
-                    loading="eager"
-                    onError={(e) => { e.currentTarget.src = "https://i.ibb.co/jPnBTf4N/pppp.jpg"; }}
-                    data-aos="zoom-in"
-                    data-aos-duration="1000"
-                    data-aos-delay="400"
-                  />
+                <div className="flex items-center justify-center md:justify-end order-1 md:order-2 mb-6 md:mb-0" data-aos="fade-left" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+                  <div className="rounded-full overflow-hidden border-4 border-white shadow-xl w-[220px] h-[220px] sm:w-[280px] sm:h-[280px] md:w-[320px] md:h-[320px] transition-all duration-300 hover:shadow-2xl hover:scale-105 hover:border-[6px]">
+                    <img 
+                      src={profile?.image_url || "https://i.ibb.co/jPnBTf4N/pppp.jpg"} 
+                      alt="Dr Sanjeev Lehri eyecare" 
+                      className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                      loading="eager"
+                      onError={(e) => { e.currentTarget.src = "https://i.ibb.co/jPnBTf4N/pppp.jpg"; }}
+                    />
+                  </div>
                 </div>
               </div>
             </div>

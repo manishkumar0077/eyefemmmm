@@ -102,7 +102,7 @@ const GynecologyDoctor = () => {
   return (
     <GynecologyLayout>
           {/* Hero Section */}
-          <section className="bg-gradient-gynecology text-white py-10 sm:py-16 md:py-24">
+          <section className="bg-gradient-gynecology text-white py-10 sm:py-12 md:py-20">
             <div className="container mx-auto px-4 max-w-6xl">
               {isDocLoading ? (
                 <div className="flex justify-center items-center py-12" data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
@@ -112,37 +112,44 @@ const GynecologyDoctor = () => {
                   </div>
                 </div>
               ) : (
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 md:gap-12 items-center">
-                  <div data-aos="fade-right" data-aos-duration="800" data-aos-easing="ease-out-cubic" className="order-2 md:order-1 text-left">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 md:gap-8 items-center">
+                  <div data-aos="fade-right" data-aos-duration="800" data-aos-easing="ease-out-cubic" className="order-2 md:order-1 text-center md:text-left">
                     <h1 
-                      className="text-3xl sm:text-4xl md:text-5xl font-bold mb-2" 
+                      className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4 md:mb-6" 
                       data-aos="fade-right" 
                       data-aos-delay="100"
                       data-aos-duration="600"
                     >
                       {isDocLoading ? "Dr. Nisha Bhatnagar" : doctorData.name}
                     </h1>
-                    <h2 
-                      className="text-xl sm:text-2xl font-medium mb-4" 
+                    <p 
+                      className="text-base sm:text-lg md:text-xl mb-2 sm:mb-3 md:mb-4 text-white/90" 
                       data-aos="fade-right" 
                       data-aos-delay="150"
                       data-aos-duration="600"
                     >
                       {isDocLoading ? "Senior Gynecologist & Fertility Specialist" : doctorData.title}
-                    </h2>
+                    </p>
                     <p 
-                      className="text-base sm:text-lg mb-6 leading-relaxed" 
+                      className="text-sm sm:text-base mb-4 sm:mb-6 md:mb-8 leading-relaxed text-white/80" 
                       data-aos="fade-right" 
                       data-aos-delay="200"
                       data-aos-duration="600"
                     >
                       {doctorData.description}
                     </p>
-                    <Link to="/gynecology/appointment" className="inline-block" data-aos="fade-up" data-aos-delay="300" data-aos-duration="600">
-                      <Button className="rounded-full bg-white text-gynecology hover:bg-white/90 px-6 py-3 text-sm sm:text-base font-medium shadow-md transition-all duration-300 hover:shadow-lg hover:scale-105">
-                        Book an Appointment with Dr. Bhatnagar
-                      </Button>
-                    </Link>
+                    <div 
+                      className="block w-full md:w-auto" 
+                      data-aos="fade-up"
+                      data-aos-delay="300"
+                      data-aos-duration="600"
+                    >
+                      <Link to="/gynecology/appointment">
+                        <Button className="rounded-full bg-white text-gynecology hover:bg-white/90 px-6 py-3 text-sm sm:text-base font-medium shadow-md transition-all duration-300 hover:shadow-lg hover:scale-105">
+                          Book an Appointment with Dr. Bhatnagar
+                        </Button>
+                      </Link>
+                    </div>
                   </div>
                   <div className="flex items-center justify-center md:justify-end order-1 md:order-2 mb-6 md:mb-0" data-aos="fade-left" data-aos-duration="800" data-aos-easing="ease-out-cubic">
                     <div className="rounded-full overflow-hidden border-4 border-white shadow-xl w-[220px] h-[220px] sm:w-[280px] sm:h-[280px] md:w-[320px] md:h-[320px] transition-all duration-300 hover:shadow-2xl hover:scale-105 hover:border-[6px]">

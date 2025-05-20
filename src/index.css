@@ -195,8 +195,62 @@
   }
 }
 
-/* Mobile-specific adjustments */
+/* Gynecology Layout */
+.gynecology-layout {
+  padding-top: 64px; /* Height of your navbar */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.gynecology-layout main {
+  flex: 1;
+  width: 100%;
+}
+
+/* Ensure the hero section starts right below the navbar */
+.gynecology-layout .hero-section {
+  margin-top: -64px; /* Negative margin to pull up */
+  padding-top: 64px; /* Offset the negative margin */
+}
+
+/* Mobile menu styles */
+.mobile-menu {
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Smooth scrolling for anchor links */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 64px; /* Height of fixed navbar */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .gynecology-layout {
+    padding-top: 56px; /* Slightly smaller navbar on mobile */
+  }
+  
+  html {
+    scroll-padding-top: 56px;
+  }
+}
+
+/* Ensure smooth scrolling for anchor links */
+html {
+  scroll-padding-top: 64px;
+}
+
+/* Adjust for mobile */
 @media (max-width: 640px) {
+  .gynecology-layout {
+    padding-top: 56px; /* Slightly smaller for mobile */
+  }
+  
+  html {
+    scroll-padding-top: 56px;
+  }
+  
   .hide-mobile {
     display: none !important;
   }

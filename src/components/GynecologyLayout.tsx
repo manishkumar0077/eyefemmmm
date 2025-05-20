@@ -11,9 +11,9 @@ interface GynecologyLayoutProps {
 const GynecologyLayout = ({ children }: GynecologyLayoutProps) => {
   return (
     <PageTransition>
-      <div className="min-h-screen flex flex-col">
+      <div className="gynecology-layout min-h-screen flex flex-col">
         <GynecologyNavbar />
-        <main className="flex-grow pt-16 sm:pt-20">
+        <main className="flex-grow">
           {children}
         </main>
         <Footer />
