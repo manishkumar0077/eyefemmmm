@@ -22,7 +22,7 @@ const GynecologyHome = () => {
       <div className="flex flex-col">
         <main className="flex-grow">
           {/* Hero Section */}
-          <section className="hero-section relative bg-gradient-gynecology text-white pt-16 pb-12 sm:pb-16 md:pb-24 lg:pb-32">
+          <section className="hero-section relative bg-gradient-gynecology text-white pt-32 pb-12 sm:pt-36 sm:pb-16 md:pt-40 md:pb-24 lg:pt-48 lg:pb-32">
             <div className="container mx-auto px-4 sm:px-6 max-w-6xl">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
                 <div data-aos="fade-right" className="order-2 md:order-1 text-center md:text-left">
@@ -45,7 +45,7 @@ const GynecologyHome = () => {
                     </Link>
                   </div>
                 </div>
-                <div className="rounded-2xl overflow-hidden shadow-xl mx-auto md:mx-0 max-w-sm sm:max-w-md md:max-w-full order-1 md:order-2 mb-6 md:mb-0" data-aos="fade-left">
+                <div className="rounded-2xl overflow-hidden shadow-xl mx-auto md:mx-0 max-w-sm sm:max-w-md md:max-w-full order-1 md:order-2 mb-6 md:mb-0 mt-4 md:mt-8" data-aos="fade-left">
                   <img alt="Women's Healthcare" className="w-full h-64 sm:h-80 md:h-full object-cover" src={heroData?.image_url || "https://www.twiniversity.com/wp-content/uploads/2018/07/featured-1024x1024.png"} loading="eager" />
                 </div>
               </div>
