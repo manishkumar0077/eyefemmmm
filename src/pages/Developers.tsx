@@ -16,6 +16,13 @@ const Developers = () => {
   });
 
   const developers = [{
+    name: "Shubham Malhotra",
+    email: "malhotrashubham144@gmail.com",
+    image: "/lovable-uploads/shubham-new.jpg",
+    role: "Lead Developer",
+    linkedin: "https://www.linkedin.com/in/shubham-malhotra-302631291/",
+    description: "Passionate about creating intuitive healthcare solutions"
+  }, {
     name: "Sarthak Srivastava",
     email: "Sarthaksrivastava06052003@gmail.com",
     image: "/lovable-uploads/sarthak-new.jpg",
@@ -28,14 +35,7 @@ const Developers = () => {
     image: "/lovable-uploads/naman-new.jpg",
     role: "Frontend Developer",
     linkedin: "https://www.linkedin.com/in/naman-verma-933184271/",
-    description: "Specializing in creating beautiful and responsive user interfaces "
-  }, {
-    name: "Shubham Malhotra",
-    email: "malhotrashubham144@gmail.com",
-    image: "/lovable-uploads/shubham-new.jpg",
-    role: "Lead Developer",
-    linkedin: "https://www.linkedin.com/in/shubham-malhotra-302631291/",
-    description: "Passionate about creating intuitive healthcare solutions"
+    description: "Specializing in creating beautiful and responsive user interfaces"
   }];
 
   return (

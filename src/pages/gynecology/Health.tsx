@@ -25,23 +25,15 @@ const GynecologyHealth = () => {
   return (
     <GynecologyLayout>
           {/* Hero Section */}
-          <section className="relative bg-cover bg-center py-20 md:py-32 lg:py-40 text-white" style={{ backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/lovable-uploads/e19346cc-18a9-4b17-b700-9f1aa67debb4.jpg")' }}>
-            <div className="absolute inset-0 bg-gradient-to-r from-gynecology/90 to-purple-800/90 mix-blend-multiply"></div>
-            <div className="container mx-auto px-4 sm:px-6 max-w-6xl relative z-10">
-              <div className="max-w-3xl">
-                <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 leading-tight">
-                  Women's Health & Fertility Care
+          <section className="bg-gradient-to-r from-pink-500 to-pink-600 text-white py-16 md:py-24 lg:py-32">
+            <div className="container mx-auto px-4 sm:px-6 max-w-6xl">
+              <div className="max-w-3xl mx-auto text-center">
+                <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 text-white leading-tight">
+                  Women's Health Concerns
                 </h1>
-                <p className="text-lg sm:text-xl md:text-2xl mb-8 leading-relaxed max-w-2xl">
-                  Comprehensive gynecological and fertility services with personalized care by Dr. Nisha Bhatnagar.
+                <p className="text-lg sm:text-xl text-white/90 mb-8 max-w-2xl mx-auto">
+                  Learn about common women's health issues, fertility challenges, and the advanced treatments we offer to address them.
                 </p>
-                <div className="flex flex-wrap gap-4">
-                  <Link to="/gynecology/appointment">
-                    <Button className="rounded-full bg-white text-gynecology hover:bg-white/90 px-8 py-6 text-base sm:text-lg font-semibold shadow-lg transition-all duration-300 hover:shadow-xl hover:scale-105">
-                      Book an Appointment
-                    </Button>
-                  </Link>
-                </div>
               </div>
             </div>
           </section>

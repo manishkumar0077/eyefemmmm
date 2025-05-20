@@ -22,7 +22,7 @@ const GynecologyHome = () => {
       <div className="flex flex-col">
         <main className="flex-grow">
           {/* Hero Section */}
-          <section className="hero-section relative bg-gradient-gynecology text-white pt-0 pb-12 sm:pb-16 md:pb-24 lg:pb-32">
+          <section className="hero-section relative bg-gradient-gynecology text-white pt-16 pb-12 sm:pb-16 md:pb-24 lg:pb-32">
             <div className="container mx-auto px-4 sm:px-6 max-w-6xl">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
                 <div data-aos="fade-right" className="order-2 md:order-1 text-center md:text-left">

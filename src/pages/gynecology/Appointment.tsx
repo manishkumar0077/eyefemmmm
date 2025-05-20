@@ -245,7 +245,7 @@ const GynecologyAppointment = () => {
 
   return (
     <GynecologyLayout>
-      <section className="bg-gradient-gynecology text-white py-16 md:py-24">
+      <section className="bg-gradient-to-r from-pink-500 to-pink-600 text-white py-16 md:py-24">
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="text-center max-w-4xl mx-auto" data-aos="fade-up">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">

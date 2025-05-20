@@ -102,7 +102,7 @@ const GynecologyDoctor = () => {
   return (
     <GynecologyLayout>
           {/* Hero Section */}
-          <section className="bg-gradient-gynecology text-white py-10 sm:py-12 md:py-20">
+          <section className="bg-gradient-to-r from-pink-500 to-pink-600 text-white py-10 sm:py-12 md:py-20">
             <div className="container mx-auto px-4 max-w-6xl">
               {isDocLoading ? (
                 <div className="flex justify-center items-center py-12" data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">

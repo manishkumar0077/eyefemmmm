@@ -17,7 +17,6 @@ const GynecologyLayout = ({ children }: GynecologyLayoutProps) => {
           {children}
         </main>
         <Footer />
-        
         {/* WhatsApp Chat Widget - will only show on gynecology pages */}
         <WhatsAppChat className="fixed bottom-4 right-4 z-50" />
       </div>
