@@ -27,14 +27,39 @@ const GynecologyHealth = () => {
           {/* Hero Section */}
           <section className="bg-gradient-gynecology text-white py-12 sm:py-16 md:py-24">
             <div className="container mx-auto px-4 sm:px-6 max-w-6xl">
-              <div className="text-center max-w-4xl mx-auto" data-aos="fade-up" data-aos-duration="800">
-                <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6" data-aos="fade-up" data-aos-delay="100">
-                  Gynae & Obs Services and Treatments
-                </h1>
-                <p className="text-base sm:text-lg md:text-xl mb-6 sm:mb-8 text-white/90 px-2" data-aos="fade-up" data-aos-delay="200">
-                  Comprehensive gynecological and obstetric care with advanced treatments 
-                  and personalized attention for every patient.
-                </p>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div className="order-2 md:order-1" data-aos="fade-right">
+                  <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
+                    Women's Health & Fertility Care
+                  </h1>
+                  <p className="text-base sm:text-lg mb-6 leading-relaxed">
+                    Comprehensive gynecological and fertility services with personalized care by Dr. Nisha Bhatnagar.
+                  </p>
+                  <div className="flex flex-wrap gap-4">
+                    <Link to="/gynecology/appointment">
+                      <Button className="rounded-full bg-white text-gynecology hover:bg-white/90 px-6 py-3 text-sm sm:text-base font-medium shadow-md transition-all duration-300 hover:shadow-lg hover:scale-105">
+                        Book an Appointment
+                      </Button>
+                    </Link>
+                    <Link to="#services">
+                      <Button className="rounded-full bg-transparent border border-white text-white hover:bg-white/10 px-6 py-3 text-sm sm:text-base font-medium transition-all duration-300 hover:shadow-lg hover:scale-105">
+                        Women's Health Issues
+                      </Button>
+                    </Link>
+                  </div>
+                </div>
+                <div className="order-1 md:order-2" data-aos="fade-left">
+                  <div className="overflow-hidden rounded-lg shadow-xl transition-all duration-300 hover:shadow-2xl hover:scale-[1.02]">
+                    <img 
+                      src="/lovable-uploads/woman-doctor-consultation.jpg" 
+                      alt="Doctor consultation with female patient" 
+                      className="w-full h-auto transform transition-transform duration-700 hover:scale-110"
+                      onError={(e) => {
+                        e.currentTarget.src = "/lovable-uploads/doctor-consultation.jpg";
+                      }}
+                    />
+                  </div>
+                </div>
               </div>
             </div>
           </section>

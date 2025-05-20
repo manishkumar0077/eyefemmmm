@@ -47,31 +47,62 @@ const EyeCareDoctor = () => {
           <section className="bg-gradient-eyecare text-white py-10 sm:py-12 md:py-20">
             <div className="container mx-auto px-4 max-w-6xl">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 md:gap-12 items-center">
-                <div data-aos="fade-right" data-aos-duration="800" className="order-2 md:order-1 text-center md:text-left">
-                  <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4 md:mb-6" data-aos="fade-up" data-aos-delay="100">
+                <div data-aos="fade-right" data-aos-duration="800" data-aos-easing="ease-out-cubic" className="order-2 md:order-1 text-center md:text-left">
+                  <h1 
+                    className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4 md:mb-6" 
+                    data-aos="fade-right" 
+                    data-aos-delay="100"
+                    data-aos-duration="600"
+                  >
                     {profileLoading ? "Dr. Sanjeev Lehri" : profile?.full_name || "Dr. Sanjeev Lehri"}
                   </h1>
-                  <p className="text-base sm:text-lg md:text-xl mb-2 sm:mb-3 md:mb-4 text-white/90" data-aos="fade-up" data-aos-delay="200">
+                  <p 
+                    className="text-base sm:text-lg md:text-xl mb-2 sm:mb-3 md:mb-4 text-white/90" 
+                    data-aos="fade-right" 
+                    data-aos-delay="150"
+                    data-aos-duration="600"
+                  >
                     {profileLoading ? "Senior Ophthalmologist & Eye Surgeon" : profile?.title || "Senior Ophthalmologist & Eye Surgeon"}
                   </p>
-                  <p className="text-sm sm:text-base mb-4 sm:mb-6 md:mb-8 text-white/80" data-aos="fade-up" data-aos-delay="300">
+                  <p 
+                    className="text-sm sm:text-base mb-4 sm:mb-6 md:mb-8 text-white/80" 
+                    data-aos="fade-right" 
+                    data-aos-delay="200"
+                    data-aos-duration="600"
+                  >
                     {profileLoading 
                       ? "With over 20 years of experience, Dr. Sanjeev Lehri is a renowned ophthalmologist specializing in cataract surgery, LASIK, glaucoma management, and corneal diseases." 
                       : profile?.description || "With over 20 years of experience, Dr. Sanjeev Lehri is a renowned ophthalmologist specializing in cataract surgery, LASIK, glaucoma management, and corneal diseases."}
                   </p>
-                  <Link to="/eyecare/appointment" className="block w-full md:w-auto" data-aos="zoom-in" data-aos-delay="400">
-                    <Button className="mac-btn px-6 py-3 sm:px-8 sm:py-4 md:px-10 md:py-5 text-base sm:text-lg bg-white text-eyecare hover:bg-white/90 w-full md:w-auto transform transition-transform hover:scale-105 duration-300">
-                      Book an Appointment
-                    </Button>
-                  </Link>
+                  <div 
+                    className="block w-full md:w-auto" 
+                    data-aos="fade-up"
+                    data-aos-delay="300"
+                    data-aos-duration="600"
+                  >
+                    <Link to="/eyecare/appointment">
+                      <Button className="mac-btn px-6 py-3 sm:px-8 sm:py-4 md:px-10 md:py-5 text-base sm:text-lg bg-white text-eyecare hover:bg-white/90 w-full md:w-auto transform transition-all hover:scale-105 duration-300 shadow-md hover:shadow-lg">
+                        Book an Appointment
+                      </Button>
+                    </Link>
+                  </div>
                 </div>
-                <div className="flex items-center justify-center rounded-full overflow-hidden border-4 border-white shadow-xl w-[200px] h-[200px] sm:w-[250px] sm:h-[250px] md:w-[300px] md:h-[300px] mx-auto transition-all duration-300 hover:shadow-2xl hover:scale-105 order-1 md:order-2 mb-6 md:mb-0" data-aos="fade-left">
+                <div 
+                  className="flex items-center justify-center rounded-full overflow-hidden border-4 border-white shadow-xl w-[200px] h-[200px] sm:w-[250px] sm:h-[250px] md:w-[300px] md:h-[300px] mx-auto transition-all duration-300 hover:shadow-2xl hover:scale-105 order-1 md:order-2 mb-6 md:mb-0" 
+                  data-aos="fade-left"
+                  data-aos-duration="800"
+                  data-aos-easing="ease-out-cubic"
+                  data-aos-delay="200"
+                >
                   <img 
                     src={profile?.image_url || "https://i.ibb.co/jPnBTf4N/pppp.jpg"} 
                     alt="Dr Sanjeev Lehri eyecare" 
                     className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
                     loading="eager"
                     onError={(e) => { e.currentTarget.src = "https://i.ibb.co/jPnBTf4N/pppp.jpg"; }}
+                    data-aos="zoom-in"
+                    data-aos-duration="1000"
+                    data-aos-delay="400"
                   />
                 </div>
               </div>
@@ -82,38 +113,84 @@ const EyeCareDoctor = () => {
           <section className="py-10 sm:py-12 md:py-16 px-4 bg-gradient-to-br from-blue-50 to-emerald-50">
             <div className="container mx-auto max-w-6xl">
               <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8 items-center">
-                <div className="md:col-span-5 order-2 md:order-1 mt-8 md:mt-0" data-aos="fade-right">
+                <div 
+                  className="md:col-span-5 order-2 md:order-1 mt-8 md:mt-0" 
+                  data-aos="fade-right"
+                  data-aos-duration="800"
+                  data-aos-easing="ease-out-cubic"
+                >
                   <div className="relative">
-                    <div className="absolute -left-2 sm:-left-4 -top-2 sm:-top-4 text-eyecare opacity-20">
+                    <div 
+                      className="absolute -left-2 sm:-left-4 -top-2 sm:-top-4 text-eyecare opacity-20"
+                      data-aos="fade-right"
+                      data-aos-delay="200"
+                      data-aos-duration="600"
+                    >
                       <Quote size={isMobile ? 40 : 60} />
                     </div>
-                    <Card className="bg-white/80 backdrop-blur-sm border border-eyecare/20 shadow-lg rounded-xl p-4 sm:p-6 md:p-8 hover:shadow-xl transition-all duration-300">
+                    <Card 
+                      className="bg-white/80 backdrop-blur-sm border border-eyecare/20 shadow-lg rounded-xl p-4 sm:p-6 md:p-8 hover:shadow-xl transition-all duration-300"
+                      data-aos="fade-up"
+                      data-aos-delay="100"
+                      data-aos-duration="700"
+                    >
                       <CardContent className="p-0 space-y-3 sm:space-y-4">
-                        <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-eyecare mb-3 sm:mb-4 md:mb-6 relative">
+                        <h2 
+                          className="text-xl sm:text-2xl md:text-3xl font-bold text-eyecare mb-3 sm:mb-4 md:mb-6 relative"
+                          data-aos="fade-right"
+                          data-aos-delay="150"
+                          data-aos-duration="600"
+                        >
                           {messageLoading ? "A Message From Dr. Lehri" : message?.title || "A Message From Dr. Lehri"}
                         </h2>
-                        <p className="text-gray-700 text-sm sm:text-base md:text-lg leading-relaxed italic">
+                        <p 
+                          className="text-gray-700 text-sm sm:text-base md:text-lg leading-relaxed italic"
+                          data-aos="fade-right"
+                          data-aos-delay="200"
+                          data-aos-duration="600"
+                        >
                           "{messageLoading 
                             ? "I believe that every patient deserves personalized care and the highest quality treatment. My mission has always been to combine advanced technology with compassion to restore and preserve the precious gift of sight."
                             : message?.message_1 || "I believe that every patient deserves personalized care and the highest quality treatment. My mission has always been to combine advanced technology with compassion to restore and preserve the precious gift of sight."}"
                         </p>
-                        <p className="text-gray-700 text-sm sm:text-base md:text-lg leading-relaxed italic">
+                        <p 
+                          className="text-gray-700 text-sm sm:text-base md:text-lg leading-relaxed italic"
+                          data-aos="fade-right"
+                          data-aos-delay="250"
+                          data-aos-duration="600"
+                        >
                           "{messageLoading
                             ? "Whether you're coming in for a routine check-up or a specialized procedure, my team and I are committed to providing you with an exceptional experience and the best possible outcomes for your vision health."
                             : message?.message_2 || "Whether you're coming in for a routine check-up or a specialized procedure, my team and I are committed to providing you with an exceptional experience and the best possible outcomes for your vision health."}"
                         </p>
-                        <div className="mt-3 sm:mt-4 md:mt-6 pt-2 sm:pt-3 md:pt-4 border-t border-gray-200">
+                        <div 
+                          className="mt-3 sm:mt-4 md:mt-6 pt-2 sm:pt-3 md:pt-4 border-t border-gray-200"
+                          data-aos="fade-up"
+                          data-aos-delay="300"
+                          data-aos-duration="600"
+                        >
                           <p className="text-eyecare font-semibold text-right">- {messageLoading ? "Dr. Sanjeev Lehri" : message?.author || "Dr. Sanjeev Lehri"}</p>
                         </div>
                       </CardContent>
                     </Card>
                   </div>
                 </div>
-                <div className="md:col-span-7 order-1 md:order-2" data-aos="fade-left">
+                <div 
+                  className="md:col-span-7 order-1 md:order-2" 
+                  data-aos="fade-left"
+                  data-aos-duration="800"
+                  data-aos-easing="ease-out-cubic"
+                >
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
                     {galleryLoading ? (
                       [1, 2].map((i) => (
-                        <div key={i} className="animate-pulse">
+                        <div 
+                          key={i} 
+                          className="animate-pulse"
+                          data-aos="fade-up"
+                          data-aos-delay={`${i * 100}`}
+                          data-aos-duration="600"
+                        >
                           <div className="h-48 md:h-64 bg-gray-200 rounded-lg mb-2"></div>
                           <div className="p-3 md:p-4 bg-white">
                             <div className="h-5 bg-gray-200 w-3/4 mb-2 rounded"></div>
@@ -122,8 +199,14 @@ const EyeCareDoctor = () => {
                         </div>
                       ))
                     ) : galleryItems?.length >= 2 ? (
-                      galleryItems.slice(0, 2).map((item) => (
-                        <div key={item.id} className="overflow-hidden rounded-lg shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+                      galleryItems.slice(0, 2).map((item, index) => (
+                        <div 
+                          key={item.id} 
+                          className="overflow-hidden rounded-lg shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
+                          data-aos="fade-up"
+                          data-aos-delay={`${100 + (index * 100)}`}
+                          data-aos-duration="600"
+                        >
                           <img 
                             src={item.image_url} 
                             alt={item.alt_text} 
@@ -138,20 +221,38 @@ const EyeCareDoctor = () => {
                       ))
                     ) : (
                       <>
-                    <div className="overflow-hidden rounded-lg shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
-                      <img src="/lovable-uploads/8254b67b-a23f-4dd5-b85d-c09b407f859c.png" alt="Dr. Lehri with patient" className="w-full h-48 md:h-64 object-cover transition-transform duration-500 hover:scale-110" />
-                      <div className="p-3 md:p-4 bg-white">
-                        <h3 className="font-bold text-base md:text-lg text-eyecare">Patient Consultation</h3>
-                        <p className="text-gray-600 text-sm md:text-base">Providing personalized care and attention</p>
-                      </div>
-                    </div>
-                    <div className="overflow-hidden rounded-lg shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
-                      <img src="/lovable-uploads/dd1fa9b7-e87a-4a71-b85e-8eda19f05600.png" alt="Dr. Lehri examining patient" className="w-full h-48 md:h-64 object-cover transition-transform duration-500 hover:scale-110" />
-                      <div className="p-3 md:p-4 bg-white">
-                        <h3 className="font-bold text-base md:text-lg text-eyecare">Comprehensive Eye Care</h3>
-                        <p className="text-gray-600 text-sm md:text-base">Using the latest techniques for better outcomes</p>
-                      </div>
-                    </div>
+                        <div 
+                          className="overflow-hidden rounded-lg shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
+                          data-aos="fade-up"
+                          data-aos-delay="200"
+                          data-aos-duration="600"
+                        >
+                          <img 
+                            src="/lovable-uploads/8254b67b-a23f-4dd5-b85d-c09b407f859c.png" 
+                            alt="Dr. Lehri with patient" 
+                            className="w-full h-48 md:h-64 object-cover transition-transform duration-500 hover:scale-110" 
+                          />
+                          <div className="p-3 md:p-4 bg-white">
+                            <h3 className="font-bold text-base md:text-lg text-eyecare">Patient Consultation</h3>
+                            <p className="text-gray-600 text-sm md:text-base">Providing personalized care and attention</p>
+                          </div>
+                        </div>
+                        <div 
+                          className="overflow-hidden rounded-lg shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
+                          data-aos="fade-up"
+                          data-aos-delay="300"
+                          data-aos-duration="600"
+                        >
+                          <img 
+                            src="/lovable-uploads/dd1fa9b7-e87a-4a71-b85e-8eda19f05600.png" 
+                            alt="Dr. Lehri examining patient" 
+                            className="w-full h-48 md:h-64 object-cover transition-transform duration-500 hover:scale-110" 
+                          />
+                          <div className="p-3 md:p-4 bg-white">
+                            <h3 className="font-bold text-base md:text-lg text-eyecare">Comprehensive Eye Care</h3>
+                            <p className="text-gray-600 text-sm md:text-base">Using the latest techniques for better outcomes</p>
+                          </div>
+                        </div>
                       </>
                     )}
                   </div>
@@ -163,11 +264,26 @@ const EyeCareDoctor = () => {
           {/* Doctor Images Gallery Section */}
           <section className="py-10 sm:py-12 md:py-16 px-4">
             <div className="container mx-auto max-w-6xl">
-              <div className="text-center mb-6 sm:mb-8 md:mb-12" data-aos="fade-up">
-                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4 md:mb-6 text-eyecare">
+              <div 
+                className="text-center mb-6 sm:mb-8 md:mb-12" 
+                data-aos="fade-up"
+                data-aos-duration="800"
+                data-aos-easing="ease-out-cubic"
+              >
+                <h2 
+                  className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4 md:mb-6 text-eyecare"
+                  data-aos="fade-up"
+                  data-aos-delay="100"
+                  data-aos-duration="600"
+                >
                   Dr. Lehri at Work
                 </h2>
-                <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
+                <p 
+                  className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto"
+                  data-aos="fade-up"
+                  data-aos-delay="150"
+                  data-aos-duration="600"
+                >
                   Providing specialized eye care with state-of-the-art equipment
                 </p>
               </div>
@@ -175,15 +291,27 @@ const EyeCareDoctor = () => {
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
                 {galleryLoading ? (
                   [1, 2, 3].map((i) => (
-                    <div key={i} className="animate-pulse">
+                    <div 
+                      key={i} 
+                      className="animate-pulse"
+                      data-aos="fade-up"
+                      data-aos-delay={`${i * 100}`}
+                      data-aos-duration="600"
+                    >
                       <div className="h-64 bg-gray-200 rounded-lg mb-2"></div>
                       <div className="h-6 bg-gray-200 w-3/4 rounded mb-2"></div>
                       <div className="h-4 bg-gray-100 w-full rounded"></div>
                     </div>
                   ))
                 ) : galleryItems?.length >= 5 ? (
-                  galleryItems.slice(2, 5).map((item) => (
-                    <div key={item.id} className="overflow-hidden rounded-lg shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
+                  galleryItems.slice(2, 5).map((item, index) => (
+                    <div 
+                      key={item.id} 
+                      className="overflow-hidden rounded-lg shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-2"
+                      data-aos="fade-up"
+                      data-aos-delay={`${100 + (index * 100)}`}
+                      data-aos-duration="600"
+                    >
                       <img 
                         src={item.image_url} 
                         alt={item.alt_text} 
@@ -198,29 +326,57 @@ const EyeCareDoctor = () => {
                   ))
                 ) : (
                   <>
-                <div className="overflow-hidden rounded-lg shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
-                  <img src="/lovable-uploads/fb9680b4-f1d5-45ff-a9dd-2b5e8f7a9e9e.png" alt="Dr. Lehri examining patient" className="w-full h-64 object-cover transition-transform duration-500 hover:scale-110" />
-                  <div className="p-4 bg-white">
-                    <h3 className="font-bold text-lg text-eyecare">Eye Examination</h3>
-                    <p className="text-gray-600">Advanced eye testing with latest technology</p>
-                  </div>
-                </div>
-                
-                <div className="overflow-hidden rounded-lg shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
-                  <img src="/lovable-uploads/8439fb25-8cd8-44e9-951a-7471a68ac611.png" alt="Dr. Lehri with equipment" className="w-full h-64 object-cover transition-transform duration-500 hover:scale-110" />
-                  <div className="p-4 bg-white">
-                    <h3 className="font-bold text-lg text-eyecare">Advanced Technology</h3>
-                    <p className="text-gray-600">Using cutting-edge medical equipment for eye care</p>
-                  </div>
-                </div>
-                
-                <div className="overflow-hidden rounded-lg shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
-                  <img src="/lovable-uploads/4b048c7a-6e26-4b27-be01-fbafa965ea5d.png" alt="Dr. Sanjeev Lehri at microscope" className="w-full h-64 object-cover transition-transform duration-500 hover:scale-110" />
-                  <div className="p-4 bg-white">
-                    <h3 className="font-bold text-lg text-eyecare">Precision Care</h3>
-                    <p className="text-gray-600">Precise diagnostic and treatment procedures</p>
-                  </div>
-                </div>
+                    <div 
+                      className="overflow-hidden rounded-lg shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-2"
+                      data-aos="fade-up"
+                      data-aos-delay="200"
+                      data-aos-duration="600"
+                    >
+                      <img 
+                        src="/lovable-uploads/fb9680b4-f1d5-45ff-a9dd-2b5e8f7a9e9e.png" 
+                        alt="Eye examination" 
+                        className="w-full h-64 object-cover transition-transform duration-500 hover:scale-110" 
+                        onError={handleImageError}
+                      />
+                      <div className="p-4 bg-white">
+                        <h3 className="font-bold text-lg text-eyecare">Comprehensive Eye Exam</h3>
+                        <p className="text-gray-600">Thorough evaluation of your vision and eye health</p>
+                      </div>
+                    </div>
+                    <div 
+                      className="overflow-hidden rounded-lg shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-2"
+                      data-aos="fade-up"
+                      data-aos-delay="300"
+                      data-aos-duration="600"
+                    >
+                      <img 
+                        src="/lovable-uploads/eye-surgery.jpg" 
+                        alt="Eye surgery" 
+                        className="w-full h-64 object-cover transition-transform duration-500 hover:scale-110" 
+                        onError={handleImageError}
+                      />
+                      <div className="p-4 bg-white">
+                        <h3 className="font-bold text-lg text-eyecare">Advanced Eye Surgery</h3>
+                        <p className="text-gray-600">Precise surgical procedures for better vision</p>
+                      </div>
+                    </div>
+                    <div 
+                      className="overflow-hidden rounded-lg shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-2"
+                      data-aos="fade-up"
+                      data-aos-delay="400"
+                      data-aos-duration="600"
+                    >
+                      <img 
+                        src="/lovable-uploads/doctor-patient.jpg" 
+                        alt="Doctor with patient" 
+                        className="w-full h-64 object-cover transition-transform duration-500 hover:scale-110" 
+                        onError={handleImageError}
+                      />
+                      <div className="p-4 bg-white">
+                        <h3 className="font-bold text-lg text-eyecare">Personalized Care</h3>
+                        <p className="text-gray-600">Dedicated to your eye health and comfort</p>
+                      </div>
+                    </div>
                   </>
                 )}
               </div>
