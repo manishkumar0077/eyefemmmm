@@ -27,7 +27,7 @@ export const MagicLinkEmail = ({
   redirect_to,
   token_hash,
 }: MagicLinkEmailProps) => {
-  const logoUrl = "https://eyefemm-uploads.s3.amazonaws.com/0be54e8c-3fb6-41db-978d-c7aaedc08372.png";
+  const logoUrl = "https://lovable-uploads.s3.amazonaws.com/0be54e8c-3fb6-41db-978d-c7aaedc08372.png";
 
   return (
     <Html>

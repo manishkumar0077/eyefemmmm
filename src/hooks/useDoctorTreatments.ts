@@ -77,7 +77,7 @@ export const useDoctorTreatments = () => {
       ],
       button_text: 'Schedule IVF Consultation',
       created_at: new Date().toISOString(),
-      image_url: '/eyefemm-uploads/519353d5-cc84-4d60-b215-a3bcf0f6db39.jpg'
+      image_url: '/lovable-uploads/519353d5-cc84-4d60-b215-a3bcf0f6db39.jpg'
     },
     {
       id: '2',
@@ -92,7 +92,7 @@ export const useDoctorTreatments = () => {
       ],
       button_text: 'Learn More About IUI',
       created_at: new Date().toISOString(),
-      image_url: '/eyefemm-uploads/47a70484-57b8-4968-839f-3f81f98e326f.jpg'
+      image_url: '/lovable-uploads/47a70484-57b8-4968-839f-3f81f98e326f.jpg'
     },
     {
       id: '3',
@@ -108,7 +108,7 @@ export const useDoctorTreatments = () => {
       ],
       button_text: 'Schedule Consultation',
       created_at: new Date().toISOString(),
-      image_url: '/eyefemm-uploads/bf3365de-daab-4d50-a8ca-410647e0995b.jpg'
+      image_url: '/lovable-uploads/bf3365de-daab-4d50-a8ca-410647e0995b.jpg'
     }
   ];
 

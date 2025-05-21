@@ -44,7 +44,7 @@ const GynecologyNavbar = () => {
             className="flex items-center space-x-2"
           >
             <img 
-              src="/eyefemm-uploads/6c43213d-6d60-4790-b8ff-d662e634ee59.png"
+              src="/lovable-uploads/6c43213d-6d60-4790-b8ff-d662e634ee59.png"
               alt="EyeFem Clinic"
               className="h-16 w-auto"
             />

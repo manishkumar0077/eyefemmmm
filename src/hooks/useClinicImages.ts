@@ -12,13 +12,13 @@ export interface ClinicImage {
 
 // Default gallery images for initial display
 const DEFAULT_IMAGES = [
-  "/eyefemm-uploads/a08d0445-8225-402a-b810-89ee25b6c797.png",
-  "/eyefemm-uploads/633b1e49-2697-4a52-b9ce-dab2b0697470.png",
-  "/eyefemm-uploads/84db2222-4685-4d10-a3a8-261d22ffd9cf.png",
-  "/eyefemm-uploads/6afce018-fb88-41f5-9ab6-fd592164cbf4.png",
-  "/eyefemm-uploads/c11fd1b0-c517-495f-b9fe-27cdd1d92b52.png",
-  "/eyefemm-uploads/9cee8b7e-a312-406f-9026-cd834d82d4fc.png",
-  "/eyefemm-uploads/c70188d0-b50b-4be3-9031-d2cb46c95428.png"
+  "/lovable-uploads/a08d0445-8225-402a-b810-89ee25b6c797.png",
+  "/lovable-uploads/633b1e49-2697-4a52-b9ce-dab2b0697470.png",
+  "/lovable-uploads/84db2222-4685-4d10-a3a8-261d22ffd9cf.png",
+  "/lovable-uploads/6afce018-fb88-41f5-9ab6-fd592164cbf4.png",
+  "/lovable-uploads/c11fd1b0-c517-495f-b9fe-27cdd1d92b52.png",
+  "/lovable-uploads/9cee8b7e-a312-406f-9026-cd834d82d4fc.png",
+  "/lovable-uploads/c70188d0-b50b-4be3-9031-d2cb46c95428.png"
 ];
 
 const DEFAULT_TITLES = [

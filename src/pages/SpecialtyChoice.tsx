@@ -48,13 +48,13 @@ const SpecialtyChoice = () => {
       id: -1,
       name: 'Dr. Sanjeev Lehri',
       specialization: 'Ophthalmologist & Eye Surgeon',
-      image_url: '/eyefemm-uploads/4f0ab2f1-cfac-48ce-9d14-205a833d4973.png'
+      image_url: '/lovable-uploads/4f0ab2f1-cfac-48ce-9d14-205a833d4973.png'
     },
     {
       id: -2,
       name: 'Dr. Nisha Bhatnagar',
       specialization: 'Gynecologist & Fertility Specialist',
-      image_url: '/eyefemm-uploads/8205aaa8-556e-4663-be5d-9619f8b8ddeb.png'
+      image_url: '/lovable-uploads/8205aaa8-556e-4663-be5d-9619f8b8ddeb.png'
     }
   ];
   
@@ -163,7 +163,7 @@ const SpecialtyChoice = () => {
 
   const handleImageError = (e: React.SyntheticEvent<HTMLImageElement, Event>) => {
     // Use a fallback image if the original fails to load
-    e.currentTarget.src = '/eyefemm-uploads/default-doctor.png';
+    e.currentTarget.src = '/lovable-uploads/default-doctor.png';
     e.currentTarget.onerror = null; // Prevent infinite loop
   };
 
@@ -174,7 +174,7 @@ const SpecialtyChoice = () => {
           <div className="container mx-auto px-4 py-4 flex items-center justify-between">
             <Link to="/" className="flex items-center space-x-2">
               <img 
-                src="/eyefemm-uploads/6c43213d-6d60-4790-b8ff-d662e634ee59.png"
+                src="/lovable-uploads/6c43213d-6d60-4790-b8ff-d662e634ee59.png"
                 alt="EyeFem Clinic"
                 className="h-14 sm:h-16 w-auto"
               />

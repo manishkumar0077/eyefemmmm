@@ -154,12 +154,12 @@ const GynecologyDoctor = () => {
                   <div className="flex items-center justify-center md:justify-end order-1 md:order-2 mb-6 md:mb-0" data-aos="fade-left" data-aos-duration="800" data-aos-easing="ease-out-cubic">
                     <div className="rounded-full overflow-hidden border-4 border-white shadow-xl w-[220px] h-[220px] sm:w-[280px] sm:h-[280px] md:w-[320px] md:h-[320px] transition-all duration-300 hover:shadow-2xl hover:scale-105 hover:border-[6px]">
                       <img 
-                        src={doctor?.image_url || "/eyefemm-uploads/doctor-default.jpg"} 
+                        src={doctor?.image_url || "/lovable-uploads/doctor-default.jpg"} 
                         alt={`Dr. ${doctor?.name || 'Nisha Bhatnagar'}`} 
                         className="w-full h-full object-cover transition-transform duration-500 hover:scale-110" 
                         loading="eager"
                         onError={(e) => {
-                          e.currentTarget.src = "/eyefemm-uploads/doctor-default.jpg";
+                          e.currentTarget.src = "/lovable-uploads/doctor-default.jpg";
                         }}
                       />
                     </div>
@@ -230,7 +230,7 @@ const GynecologyDoctor = () => {
                       <>
                         <div className="overflow-hidden rounded-lg shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
                           <div className="flex items-center justify-center w-full h-60 sm:h-64 md:h-80 overflow-hidden">
-                            <img alt={`${doctorData.name} with patient`} className="w-full h-full object-cover transition-transform duration-500 hover:scale-110" src="/eyefemm-uploads/88fc1285-14f9-49ca-94a9-c42489a1f862.jpg" />
+                            <img alt={`${doctorData.name} with patient`} className="w-full h-full object-cover transition-transform duration-500 hover:scale-110" src="/lovable-uploads/88fc1285-14f9-49ca-94a9-c42489a1f862.jpg" />
                           </div>
                           <div className="p-3 md:p-4 bg-white">
                             <h3 className="font-bold text-base md:text-lg text-gynecology">Patient Consultation</h3>
@@ -239,7 +239,7 @@ const GynecologyDoctor = () => {
                         </div>
                         <div className="overflow-hidden rounded-lg shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
                           <div className="flex items-center justify-center w-full h-60 sm:h-64 md:h-80 overflow-hidden">
-                            <img alt={`${doctorData.name} examining patient`} src="/eyefemm-uploads/f5cf3ae1-141c-4de3-910e-c93d2ec4cf0e.jpg" className="w-full h-full object-cover transition-transform duration-500 hover:scale-110" />
+                            <img alt={`${doctorData.name} examining patient`} src="/lovable-uploads/f5cf3ae1-141c-4de3-910e-c93d2ec4cf0e.jpg" className="w-full h-full object-cover transition-transform duration-500 hover:scale-110" />
                           </div>
                           <div className="p-3 md:p-4 bg-white">
                             <h3 className="font-bold text-base md:text-lg text-gynecology">Comprehensive Women's Care</h3>
@@ -297,9 +297,9 @@ const GynecologyDoctor = () => {
                       <img 
                         alt="Advanced medical equipment" 
                         className="w-full h-full object-cover" 
-                        src={procedure?.image_url || "/eyefemm-uploads/95d1a8c8-16b2-492c-9398-e078a1c517df.jpg"} 
+                        src={procedure?.image_url || "/lovable-uploads/95d1a8c8-16b2-492c-9398-e078a1c517df.jpg"} 
                         onError={(e) => {
-                          e.currentTarget.src = "/eyefemm-uploads/95d1a8c8-16b2-492c-9398-e078a1c517df.jpg";
+                          e.currentTarget.src = "/lovable-uploads/95d1a8c8-16b2-492c-9398-e078a1c517df.jpg";
                         }}
                       />
                     </div>
@@ -458,12 +458,12 @@ const GynecologyDoctor = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
                   <div className="overflow-hidden rounded-lg shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
                     <img 
-                      src={procedure?.image_url || "/eyefemm-uploads/0716c0a3-c007-438d-8ef0-5fbe8d302c42.png"} 
+                      src={procedure?.image_url || "/lovable-uploads/0716c0a3-c007-438d-8ef0-5fbe8d302c42.png"} 
                       alt="Advanced gynecological procedure" 
                       className="w-full h-56 sm:h-64 md:h-72 object-cover transition-transform duration-500 hover:scale-110" 
                       loading="lazy"
                       onError={(e) => {
-                        e.currentTarget.src = "/eyefemm-uploads/0716c0a3-c007-438d-8ef0-5fbe8d302c42.png";
+                        e.currentTarget.src = "/lovable-uploads/0716c0a3-c007-438d-8ef0-5fbe8d302c42.png";
                       }}
                     />
                     <div className="p-3 sm:p-4 bg-white">

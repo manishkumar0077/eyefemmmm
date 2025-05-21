@@ -32,7 +32,7 @@ const fallbackFeaturedProviders: GyneInsuranceProvider[] = [
     id: "1",
     name: "Central Government Health Scheme (CGHS)",
     provider_type: "featured",
-    image: "/eyefemm-uploads/22774699-5502-4b25-994c-eeb2d3cf91ff.png",
+    image: "/lovable-uploads/22774699-5502-4b25-994c-eeb2d3cf91ff.png",
     sort_order: 1,
     created_at: new Date().toISOString()
   },
@@ -40,7 +40,7 @@ const fallbackFeaturedProviders: GyneInsuranceProvider[] = [
     id: "2",
     name: "Delhi Government Employees Health Scheme (DGEHS)",
     provider_type: "featured",
-    image: "/eyefemm-uploads/2b09fcb1-f9aa-4d77-92b3-845e510b2f97.png",
+    image: "/lovable-uploads/2b09fcb1-f9aa-4d77-92b3-845e510b2f97.png",
     sort_order: 2,
     created_at: new Date().toISOString()
   },
@@ -48,7 +48,7 @@ const fallbackFeaturedProviders: GyneInsuranceProvider[] = [
     id: "3",
     name: "Municipal Corporation of Delhi (MCD)",
     provider_type: "featured",
-    image: "/eyefemm-uploads/7541ab82-360c-4f9c-af5e-152356a67736.png",
+    image: "/lovable-uploads/7541ab82-360c-4f9c-af5e-152356a67736.png",
     sort_order: 3,
     created_at: new Date().toISOString()
   }

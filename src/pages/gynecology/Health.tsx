@@ -200,7 +200,7 @@ const GynecologyHealth = () => {
                               <img 
                                 alt="IVF Treatment" 
                                 className="w-full h-full object-cover" 
-                                src="/eyefemm-uploads/519353d5-cc84-4d60-b215-a3bcf0f6db39.jpg"
+                                src="/lovable-uploads/519353d5-cc84-4d60-b215-a3bcf0f6db39.jpg"
                                 loading="lazy" 
                               />
                             </div>
@@ -263,7 +263,7 @@ const GynecologyHealth = () => {
                               <img 
                                 alt="Hysteroscopy Procedure" 
                                 className="w-full h-full object-cover" 
-                                src="/eyefemm-uploads/bf3365de-daab-4d50-a8ca-410647e0995b.jpg"
+                                src="/lovable-uploads/bf3365de-daab-4d50-a8ca-410647e0995b.jpg"
                                 loading="lazy" 
                               />
                             </div>
@@ -325,7 +325,7 @@ const GynecologyHealth = () => {
                               <img 
                                 alt="IUI Treatment" 
                                 className="w-full h-full object-cover" 
-                                src="/eyefemm-uploads/47a70484-57b8-4968-839f-3f81f98e326f.jpg"
+                                src="/lovable-uploads/47a70484-57b8-4968-839f-3f81f98e326f.jpg"
                                 loading="lazy" 
                               />
                             </div>
@@ -562,18 +562,18 @@ const GynecologyHealth = () => {
 // Helper function to get images based on treatment type (kept from current file for fallbacks)
 const getImageForTreatment = (title: string) => {
   if (title.includes("IVF")) {
-    return "/eyefemm-uploads/519353d5-cc84-4d60-b215-a3bcf0f6db39.jpg";
+    return "/lovable-uploads/519353d5-cc84-4d60-b215-a3bcf0f6db39.jpg";
   } else if (title.includes("IUI")) {
-    return "/eyefemm-uploads/47a70484-57b8-4968-839f-3f81f98e326f.jpg";
+    return "/lovable-uploads/47a70484-57b8-4968-839f-3f81f98e326f.jpg";
   } else if (title.includes("Hysteroscopy")) {
-    return "/eyefemm-uploads/bf3365de-daab-4d50-a8ca-410647e0995b.jpg";
+    return "/lovable-uploads/bf3365de-daab-4d50-a8ca-410647e0995b.jpg";
   } else if (title.includes("Laparoscopic")) {
-    return "/eyefemm-uploads/bc65b119-7b9f-48c1-8ff3-16aee3475f1c.jpg";
+    return "/lovable-uploads/bc65b119-7b9f-48c1-8ff3-16aee3475f1c.jpg";
   } else if (title.includes("High Risk") || title.includes("Pregnancy")) {
-    return "/eyefemm-uploads/c9f8cc79-a746-4d28-bcc9-eb05cac776e2.jpg";
+    return "/lovable-uploads/c9f8cc79-a746-4d28-bcc9-eb05cac776e2.jpg";
   }
   // Default image
-  return "/eyefemm-uploads/519353d5-cc84-4d60-b215-a3bcf0f6db39.jpg";
+  return "/lovable-uploads/519353d5-cc84-4d60-b215-a3bcf0f6db39.jpg";
 };
 
 export default GynecologyHealth;

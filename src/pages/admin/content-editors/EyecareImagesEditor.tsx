@@ -311,7 +311,7 @@ export const EyecareImagesEditor = () => {
                           alt={image.title}
                           className="w-full h-full object-cover"
                           onError={(e) => {
-                            e.currentTarget.src = "/eyefemm-uploads/default-image.png";
+                            e.currentTarget.src = "/lovable-uploads/default-image.png";
                           }}
                         />
                       </div>
