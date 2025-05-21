@@ -106,35 +106,34 @@ const EditContent = () => {
     "service-highlights": "Service Highlights",
     "gallery-images": "Gallery Images",
     "doctor-specialities": "Doctor Specialities",
-    "gynecology-services": "Gynecology Services",
+    "gynecology-services": "Services",
     "fertility-section": "Fertility Section",
-    "doctor-why-choose": "Doctor Why Choose",
-    "doctor-treatments": "Doctor Treatments",
+    "doctor-why-choose": "Why Choose Us",
+    "doctor-treatments": "Treatments",
     "advanced-procedures": "Advanced Procedures",
-    "doctor-gyne": "Gyne Doctor Profile",
+    "doctor-gyne": "Doctor Profile",
     "doctor-gyne-message": "Doctor's Message",
     "gyne-qualifications": "Doctor's Qualifications",
     "gyne-expertise": "Doctor's Expertise",
     "testimonials": "Testimonials",
     "faqs": "FAQs",
-    "gyne-insurance-providers": "Gyne Insurance Providers",
+    "gyne-insurance-providers": "Insurance Providers",
     "departments": "Departments",
-    "eyecare-hero": "Eyecare Hero Section",
-    "eye-conditions": "Eye Conditions",
-    "eyecare-why-choose": "Eyecare Why Choose",
-    "eyecare-services": "Eyecare Services",
-    "eye-testimonials": "Eye Testimonials",
+    "eyecare-hero": "Hero Section",
+    "eye-conditions": "Conditions",
+    "eyecare-why-choose": "Why Choose Us",
+    "eyecare-tab-services": "Tab Services",
+    "eye-testimonials": "Testimonials",
     "doctor-profile": "Doctor Profile",
     "doctor-message": "Doctor's Message",
-    "doctor-qualifications": "Doctor Qualifications",
-    "doctor-expertise": "Doctor Expertise",
+    "doctor-qualifications": "Doctor's Qualifications",
+    "doctor-expertise": "Doctor's Expertise",
     "doctor-gallery": "Doctor Gallery",
-    "eye-care-procedures": "Eye Care Procedures",
-    "eye-care-details": "Eye Care Details",
-    "gynecology-procedures": "Gynecology Procedures",
-    // "eyecare-images": "Eyecare Images",
-    "eyecare-tab-services": "Eyecare Tab Services",
-    "eye-insurance-providers": "Eye Insurance Providers"
+    "eye-care-procedures": "Procedures",
+    "eye-care-details": "Details",
+    "eye-insurance-providers": "Insurance Providers",
+    "gynecology-procedures": "Procedures",
+    // "eyecare-images": "Eyecare Images"
   };
 
   // Handle tab change
@@ -202,7 +201,6 @@ const EditContent = () => {
       "service-highlights": "Edit the highlights for gynecology services shown on the home page",
       "gallery-images": "Manage the clinic image gallery shown on the gallery page",
       "doctor-specialities": "Manage doctor profiles and specialities shown on specialty pages",
-      "eyecare-services": "Edit the legacy services displayed on the eye care department home page",
       "eyecare-tab-services": "Edit the new tab-based services displayed on the eye care services page",
       "fertility-section": "Edit the fertility treatments section on the gynecology home page",
       "doctor-why-choose": 'Edit the "Why Choose Us" benefits displayed on the gynecology home page',
@@ -372,9 +370,9 @@ const EditContent = () => {
               </div>
               
               <div>
-                <h4 className="text-sm font-medium text-gray-500 mb-2 border-b pb-1">Other Eye Care Content</h4>
+                <h4 className="text-sm font-medium text-gray-500 mb-2 border-b pb-1">Procedures & Content</h4>
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2">
-                  {['eye-testimonials', 'eye-care-procedures', 'eye-care-details', 'eye-insurance-providers'].map((tabValue) => (
+                  {['eye-care-procedures', 'eye-care-details', 'eye-testimonials', 'eye-insurance-providers'].map((tabValue) => (
                     <Button
                       key={tabValue}
                       variant={activeTab === tabValue ? "default" : "outline"}
@@ -439,7 +437,7 @@ const EditContent = () => {
               </div>
               
               <div>
-                <h4 className="text-sm font-medium text-gray-500 mb-2 border-b pb-1">Other Content</h4>
+                <h4 className="text-sm font-medium text-gray-500 mb-2 border-b pb-1">Procedures & Content</h4>
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2">
                   {['testimonials', 'faqs', 'gyne-insurance-providers'].map((tabValue) => (
                     <Button

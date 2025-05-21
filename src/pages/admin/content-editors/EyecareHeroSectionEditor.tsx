@@ -100,13 +100,14 @@ export const EyecareHeroSectionEditor = () => {
 
   if (isLoading) {
     return (
-      <Card>
-        <CardHeader>
-          <CardTitle>Advanced Eye Care Services</CardTitle>
+      <Card className="shadow-sm border-neutral-200">
+        <CardHeader className="pb-2">
+          <CardTitle className="text-lg font-medium">Advanced Eye Care Services</CardTitle>
           <CardDescription>Edit the hero section on the Eyecare homepage</CardDescription>
         </CardHeader>
-        <CardContent className="flex justify-center py-10">
-          <Loader2 className="h-8 w-8 animate-spin text-primary" />
+        <CardContent className="flex flex-col items-center justify-center py-12">
+          <Loader2 className="h-8 w-8 animate-spin text-primary mb-2" />
+          <p className="text-sm text-gray-500">Loading hero section content...</p>
         </CardContent>
       </Card>
     );
@@ -114,14 +115,25 @@ export const EyecareHeroSectionEditor = () => {
 
   if (error) {
     return (
-      <Card>
-        <CardHeader>
-          <CardTitle>Advanced Eye Care Services</CardTitle>
+      <Card className="shadow-sm border-neutral-200">
+        <CardHeader className="pb-2">
+          <CardTitle className="text-lg font-medium">Advanced Eye Care Services</CardTitle>
           <CardDescription>Edit the hero section on the Eyecare homepage</CardDescription>
         </CardHeader>
-        <CardContent>
-          <div className="bg-red-50 p-4 rounded-md text-red-500">
-            An error occurred while loading data. Please try again later.
+        <CardContent className="pt-2">
+          <div className="bg-red-50 p-4 rounded-md border border-red-100 flex items-center">
+            <div className="text-red-500 mr-2">⚠️</div>
+            <p className="text-red-500 text-sm">An error occurred while loading data. Please try again later.</p>
+          </div>
+          <div className="mt-3 flex justify-end">
+            <Button 
+              variant="outline" 
+              size="sm" 
+              onClick={refreshData} 
+              className="text-xs h-8"
+            >
+              Try Again
+            </Button>
           </div>
         </CardContent>
       </Card>
@@ -129,95 +141,140 @@ export const EyecareHeroSectionEditor = () => {
   }
 
   return (
-    <Card>
-      <CardHeader>
-        <CardTitle>Advanced Eye Care Services</CardTitle>
-        <CardDescription>Edit the hero section on the Eyecare homepage</CardDescription>
+    <Card className="shadow-sm border-neutral-200">
+      <CardHeader className="border-b bg-gray-50/50 pb-3">
+        <CardTitle className="text-lg font-medium flex items-center">
+          <ImageIcon className="h-4 w-4 mr-2 text-primary" />
+          Advanced Eye Care Services
+        </CardTitle>
+        <CardDescription className="text-xs">Edit the hero section on the Eyecare homepage</CardDescription>
       </CardHeader>
-      <CardContent>
-        <form onSubmit={handleSubmit} className="space-y-6">
-          <div className="space-y-2">
-            <Label htmlFor="title">Title</Label>
-            <Input
-              id="title"
-              value={editValues.title}
-              onChange={(e) => setEditValues({ ...editValues, title: e.target.value })}
-              placeholder="Enter title"
-            />
-          </div>
+      <CardContent className="pt-5">
+        <form onSubmit={handleSubmit} className="space-y-5">
+          <div className="grid gap-5 md:grid-cols-2">
+            {/* Left side - Text fields */}
+            <div className="space-y-4">
+              <div className="space-y-1.5">
+                <Label htmlFor="title" className="text-sm font-medium">
+                  Title
+                </Label>
+                <Input
+                  id="title"
+                  value={editValues.title}
+                  onChange={(e) => setEditValues({ ...editValues, title: e.target.value })}
+                  placeholder="Enter title"
+                  className="h-9"
+                />
+              </div>
 
-          <div className="space-y-2">
-            <Label htmlFor="subtitle">Subtitle</Label>
-            <Textarea
-              id="subtitle"
-              value={editValues.subtitle || ''}
-              onChange={(e) => setEditValues({ ...editValues, subtitle: e.target.value })}
-              placeholder="Enter subtitle"
-              rows={4}
-            />
-          </div>
-
-          <div className="space-y-2">
-            <Label>Hero Image</Label>
-            <div 
-              className="border-2 border-dashed rounded-lg p-4 cursor-pointer hover:bg-gray-50 transition-colors"
-              onClick={handleImageClick}
-            >
-              <input
-                type="file"
-                ref={fileInputRef}
-                className="hidden"
-                accept="image/*"
-                onChange={handleFileSelect}
-              />
-              
-              {imagePreview ? (
-                <div className="relative">
-                  <img 
-                    src={imagePreview} 
-                    alt="Hero preview" 
-                    className="w-full h-48 object-cover rounded-md" 
-                  />
-                  <div className="absolute inset-0 flex items-center justify-center bg-black/30 opacity-0 hover:opacity-100 transition-opacity rounded-md">
-                    <Button variant="ghost" size="sm" className="text-white">
-                      <ImageIcon className="h-5 w-5 mr-2" />
-                      Change Image
-                    </Button>
+              <div className="space-y-1.5">
+                <Label htmlFor="subtitle" className="text-sm font-medium">
+                  Subtitle
+                </Label>
+                <Textarea
+                  id="subtitle"
+                  value={editValues.subtitle || ''}
+                  onChange={(e) => setEditValues({ ...editValues, subtitle: e.target.value })}
+                  placeholder="Enter subtitle"
+                  className="min-h-[120px] resize-none"
+                />
+              </div>
+            </div>
+            
+            {/* Right side - Image upload */}
+            <div className="space-y-1.5">
+              <Label className="text-sm font-medium">Hero Image</Label>
+              <div 
+                className={`border-2 border-dashed rounded-lg cursor-pointer transition-colors h-[185px] flex flex-col items-center justify-center overflow-hidden relative
+                  ${imagePreview ? 'border-primary/20 bg-primary/5' : 'hover:bg-gray-50 border-gray-200'}`}
+                onClick={handleImageClick}
+              >
+                <input
+                  type="file"
+                  ref={fileInputRef}
+                  className="hidden"
+                  accept="image/*"
+                  onChange={handleFileSelect}
+                />
+                
+                {imagePreview ? (
+                  <div className="relative w-full h-full">
+                    <img 
+                      src={imagePreview} 
+                      alt="Hero preview" 
+                      className="w-full h-full object-cover" 
+                    />
+                    <div className="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 hover:opacity-100 transition-opacity">
+                      <Button variant="secondary" size="sm" className="text-white bg-black/60 hover:bg-black/80 border-0">
+                        <ImageIcon className="h-4 w-4 mr-1.5" />
+                        Change Image
+                      </Button>
+                    </div>
                   </div>
-                </div>
-              ) : (
-                <div className="flex flex-col items-center justify-center py-4">
-                  <Upload className="h-10 w-10 text-gray-400 mb-2" />
-                  <p className="text-sm text-gray-500">Click to upload an image</p>
-                </div>
-              )}
+                ) : (
+                  <div className="flex flex-col items-center justify-center text-center px-4">
+                    <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center mb-2">
+                      <Upload className="h-6 w-6 text-primary" />
+                    </div>
+                    <p className="text-sm font-medium">Upload hero image</p>
+                    <p className="text-xs text-gray-500 mt-1">Click to browse or drag and drop</p>
+                  </div>
+                )}
 
-              {isUploading && (
-                <div className="mt-2 flex items-center justify-center">
-                  <Loader2 className="h-4 w-4 animate-spin mr-2" />
-                  <span className="text-sm">Uploading...</span>
-                </div>
-              )}
+                {isUploading && (
+                  <div className="absolute inset-0 flex items-center justify-center bg-white/80">
+                    <div className="flex flex-col items-center">
+                      <Loader2 className="h-8 w-8 animate-spin text-primary mb-2" />
+                      <span className="text-sm font-medium">Uploading...</span>
+                    </div>
+                  </div>
+                )}
+              </div>
+              <p className="text-xs text-gray-500 mt-1.5 pl-1">
+                Recommended: 1200×600px, PNG or JPG format
+              </p>
             </div>
           </div>
 
-          <Button 
-            type="submit" 
-            className="w-full" 
-            disabled={isUploading || isSaving}
-          >
-            {isSaving ? (
-              <>
-                <Loader2 className="h-4 w-4 animate-spin mr-2" />
-                Saving Changes
-              </>
-            ) : (
-              <>
-                <Save className="h-4 w-4 mr-2" />
-                Save Changes
-              </>
-            )}
-          </Button>
+          <div className="pt-2 border-t mt-6">
+            <div className="flex justify-end gap-3">
+              <Button 
+                variant="outline" 
+                type="button" 
+                size="sm"
+                className="h-9"
+                onClick={() => {
+                  setEditValues({
+                    title: heroSection?.title || '',
+                    subtitle: heroSection?.subtitle || '',
+                    image_url: heroSection?.image_url || ''
+                  });
+                  setImagePreview(heroSection?.image_url || null);
+                }}
+                disabled={isUploading || isSaving}
+              >
+                Reset
+              </Button>
+              <Button 
+                type="submit" 
+                size="sm"
+                className="h-9"
+                disabled={isUploading || isSaving}
+              >
+                {isSaving ? (
+                  <>
+                    <Loader2 className="h-3.5 w-3.5 animate-spin mr-1.5" />
+                    Saving...
+                  </>
+                ) : (
+                  <>
+                    <Save className="h-3.5 w-3.5 mr-1.5" />
+                    Save Changes
+                  </>
+                )}
+              </Button>
+            </div>
+          </div>
         </form>
       </CardContent>
     </Card>

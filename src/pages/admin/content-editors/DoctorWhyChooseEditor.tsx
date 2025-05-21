@@ -107,68 +107,90 @@ export const DoctorWhyChooseEditor = () => {
 
   if (isLoading) {
     return (
-      <div className="flex justify-center p-8">
-        <div className="flex flex-col items-center">
-          <Loader2 className="h-8 w-8 animate-spin text-gynecology" />
-          <p className="mt-2">Loading choices...</p>
-        </div>
+      <div className="flex flex-col items-center justify-center py-10 px-4 bg-white rounded-lg border shadow-sm">
+        <Loader2 className="h-7 w-7 animate-spin text-gynecology mb-2" />
+        <p className="text-sm text-gray-600">Loading benefits...</p>
       </div>
     );
   }
 
   if (error) {
     return (
-      <div className="p-6 border border-red-200 rounded-lg bg-red-50">
+      <div className="p-5 border border-red-200 rounded-lg bg-red-50/80 shadow-sm">
         <div className="flex items-center gap-2 text-red-600">
-          <AlertTriangle className="h-5 w-5" />
-          <h3 className="font-semibold">Error loading choices</h3>
+          <AlertTriangle className="h-5 w-5 flex-shrink-0" />
+          <h3 className="font-medium">Error loading benefits</h3>
         </div>
-        <p className="mt-2 text-sm text-red-600">{error.message}</p>
+        <p className="mt-2 text-sm text-red-600/90">{error.message}</p>
+        <div className="mt-4 flex justify-end">
+          <Button 
+            variant="outline" 
+            size="sm"
+            className="text-xs h-8"
+            onClick={() => window.location.reload()}
+          >
+            <Loader2 className="h-3 w-3 mr-1" />
+            Reload Page
+          </Button>
+        </div>
       </div>
     );
   }
 
   return (
-    <div className="space-y-6">
-      <div className="flex justify-between items-center">
+    <div className="space-y-5">
+      <div className="flex flex-col sm:flex-row justify-between sm:items-center gap-4 bg-white p-4 rounded-lg border shadow-sm">
         <div>
-          <h3 className="text-lg font-semibold">Doctor Benefits</h3>
-          <p className="text-sm text-gray-500">Edit the "Why Choose Us" items displayed on the gynecology homepage</p>
+          <h3 className="text-base font-medium flex items-center text-gynecology">
+            <div className="h-5 w-1 bg-gynecology rounded-full mr-2"></div>
+            Doctor Benefits
+          </h3>
+          <p className="text-xs text-gray-500 mt-1 ml-3">Edit the "Why Choose Us" items displayed on the gynecology homepage</p>
         </div>
         <Button
           onClick={() => setIsAdding(true)}
           disabled={isAdding}
-          className="bg-gynecology hover:bg-gynecology/90"
+          size="sm"
+          className="bg-gynecology hover:bg-gynecology/90 h-8 shadow-sm self-end sm:self-auto"
         >
-          <Plus className="h-4 w-4 mr-2" />
+          <Plus className="h-3.5 w-3.5 mr-1.5" />
           Add New Benefit
         </Button>
       </div>
 
       {isAdding && (
-        <Card className="p-4 border-2 border-gynecology/50">
-          <h3 className="font-medium mb-3">Add New Benefit</h3>
-          <div className="space-y-3">
-            <div>
-              <label className="block text-sm font-medium mb-1">Title</label>
+        <Card className="shadow-sm border border-gynecology/30 overflow-hidden">
+          <div className="bg-gynecology/10 border-b px-4 py-2.5 flex justify-between items-center">
+            <h3 className="font-medium text-sm text-gynecology flex items-center">
+              <Plus className="h-3.5 w-3.5 mr-1.5" />
+              Add New Benefit
+            </h3>
+          </div>
+          <div className="p-4 space-y-4">
+            <div className="space-y-1.5">
+              <label className="block text-xs font-medium">Title</label>
               <Input
                 value={newChoice.title}
                 onChange={(e) => setNewChoice({...newChoice, title: e.target.value})}
                 placeholder="Enter benefit title"
+                className="h-9"
               />
             </div>
-            <div>
-              <label className="block text-sm font-medium mb-1">Description</label>
+            <div className="space-y-1.5">
+              <label className="block text-xs font-medium">Description</label>
               <Textarea
                 value={newChoice.description}
                 onChange={(e) => setNewChoice({...newChoice, description: e.target.value})}
                 placeholder="Enter benefit description"
                 rows={3}
+                className="resize-none text-sm"
               />
             </div>
-            <div className="flex justify-end gap-2 pt-2">
+            <div className="flex justify-end gap-2 pt-1">
               <Button
                 variant="outline"
+                size="sm"
+                className="h-8"
                 onClick={() => {
                   setIsAdding(false);
                   setNewChoice({ title: '', description: '' });
@@ -179,16 +201,17 @@ export const DoctorWhyChooseEditor = () => {
               <Button
                 onClick={handleAddSubmit}
                 disabled={saving.new}
-                className="bg-gynecology hover:bg-gynecology/90"
+                size="sm"
+                className="h-8 bg-gynecology hover:bg-gynecology/90"
               >
                 {saving.new ? (
                   <>
-                    <Loader2 className="h-4 w-4 mr-2 animate-spin" />
+                    <Loader2 className="h-3.5 w-3.5 mr-1.5 animate-spin" />
                     Adding...
                   </>
                 ) : (
                   <>
-                    <Save className="h-4 w-4 mr-2" />
+                    <Save className="h-3.5 w-3.5 mr-1.5" />
                     Save
                   </>
                 )}
@@ -198,68 +221,82 @@ export const DoctorWhyChooseEditor = () => {
         </Card>
       )}
 
-      <div className="space-y-4">
+      <div className="space-y-3">
         {choices.map((choice) => (
-          <Card key={choice.id} className="p-4">
+          <Card key={choice.id} className="shadow-sm overflow-hidden">
             {editingChoice === choice.id ? (
-              <div className="space-y-3">
-                <div>
-                  <label className="block text-sm font-medium mb-1">Title</label>
-                  <Input
-                    value={getEditData(choice.id).title}
-                    onChange={(e) => setEditData({
-                      ...editData,
-                      [choice.id]: {...getEditData(choice.id), title: e.target.value}
-                    })}
-                    placeholder="Enter benefit title"
-                  />
+              <div>
+                <div className="bg-gynecology/5 border-b px-4 py-2.5 flex justify-between items-center">
+                  <h3 className="font-medium text-sm text-gynecology">Editing Benefit</h3>
                 </div>
-                <div>
-                  <label className="block text-sm font-medium mb-1">Description</label>
-                  <Textarea
-                    value={getEditData(choice.id).description}
-                    onChange={(e) => setEditData({
-                      ...editData,
-                      [choice.id]: {...getEditData(choice.id), description: e.target.value}
-                    })}
-                    placeholder="Enter benefit description"
-                    rows={3}
-                  />
-                </div>
-                <div className="flex justify-end gap-2 pt-2">
-                  <Button
-                    variant="outline"
-                    onClick={handleEditCancel}
-                  >
-                    Cancel
-                  </Button>
-                  <Button
-                    onClick={() => handleEditSave(choice.id)}
-                    disabled={saving[choice.id]}
-                    className="bg-gynecology hover:bg-gynecology/90"
-                  >
-                    {saving[choice.id] ? (
-                      <>
-                        <Loader2 className="h-4 w-4 mr-2 animate-spin" />
-                        Saving...
-                      </>
-                    ) : (
-                      <>
-                        <Save className="h-4 w-4 mr-2" />
-                        Save
-                      </>
-                    )}
-                  </Button>
+                <div className="p-4 space-y-4">
+                  <div className="space-y-1.5">
+                    <label className="block text-xs font-medium">Title</label>
+                    <Input
+                      value={getEditData(choice.id).title}
+                      onChange={(e) => setEditData({
+                        ...editData,
+                        [choice.id]: {...getEditData(choice.id), title: e.target.value}
+                      })}
+                      placeholder="Enter benefit title"
+                      className="h-9"
+                    />
+                  </div>
+                  <div className="space-y-1.5">
+                    <label className="block text-xs font-medium">Description</label>
+                    <Textarea
+                      value={getEditData(choice.id).description}
+                      onChange={(e) => setEditData({
+                        ...editData,
+                        [choice.id]: {...getEditData(choice.id), description: e.target.value}
+                      })}
+                      placeholder="Enter benefit description"
+                      rows={3}
+                      className="resize-none text-sm"
+                    />
+                  </div>
+                  <div className="flex justify-end gap-2 pt-1">
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      className="h-8"
+                      onClick={handleEditCancel}
+                    >
+                      Cancel
+                    </Button>
+                    <Button
+                      onClick={() => handleEditSave(choice.id)}
+                      disabled={saving[choice.id]}
+                      className="bg-gynecology hover:bg-gynecology/90 h-8"
+                      size="sm"
+                    >
+                      {saving[choice.id] ? (
+                        <>
+                          <Loader2 className="h-3.5 w-3.5 mr-1.5 animate-spin" />
+                          Saving...
+                        </>
+                      ) : (
+                        <>
+                          <Save className="h-3.5 w-3.5 mr-1.5" />
+                          Save
+                        </>
+                      )}
+                    </Button>
+                  </div>
                 </div>
               </div>
             ) : (
-              <div>
-                <div className="flex justify-between">
-                  <h3 className="font-semibold text-gynecology">{choice.title}</h3>
-                  <div className="flex gap-2">
+              <div className="p-4">
+                <div className="flex justify-between items-start">
+                  <div>
+                    <h3 className="font-medium text-gynecology">{choice.title}</h3>
+                    <p className="mt-1.5 text-xs text-gray-600 leading-relaxed">{choice.description}</p>
+                  </div>
+                  <div className="flex gap-1 ml-4 flex-shrink-0">
                     <Button
                       variant="ghost"
                       size="sm"
+                      className="h-7 text-xs px-2 hover:bg-gynecology/10"
                       onClick={() => handleEditStart(choice.id)}
                     >
                       Edit
@@ -267,24 +304,36 @@ export const DoctorWhyChooseEditor = () => {
                     <Button
                       variant="ghost"
                       size="sm"
-                      className="text-red-500 hover:text-red-700 hover:bg-red-50"
+                      className="h-7 px-2 text-red-500 hover:text-red-700 hover:bg-red-50"
                       onClick={() => handleDelete(choice.id)}
                       disabled={saving[choice.id]}
                     >
                       {saving[choice.id] ? (
-                        <Loader2 className="h-4 w-4 animate-spin" />
+                        <Loader2 className="h-3.5 w-3.5 animate-spin" />
                       ) : (
-                        <Trash2 className="h-4 w-4" />
+                        <Trash2 className="h-3.5 w-3.5" />
                       )}
                     </Button>
                   </div>
                 </div>
-                <p className="mt-2 text-sm text-gray-600">{choice.description}</p>
               </div>
             )}
           </Card>
         ))}
+        {choices.length === 0 && !isAdding && (
+          <div className="bg-gray-50 border rounded-lg p-5 text-center">
+            <p className="text-sm text-gray-500">No benefits added yet</p>
+            <Button
+              onClick={() => setIsAdding(true)}
+              size="sm"
+              className="bg-gynecology hover:bg-gynecology/90 mt-3 h-8"
+            >
+              <Plus className="h-3.5 w-3.5 mr-1.5" />
+              Add Your First Benefit
+            </Button>
+          </div>
+        )}
       </div>
     </div>
   );
-}; 
+};
