@@ -37,12 +37,12 @@ const uploadLogo = async () => {
     }
     
     // Fetch the logo from the public URL provided in the task
-    const logoUrl = "/lovable-uploads/a3d06283-3588-47bd-b72e-8fe5ff5799e2.png";
+    const logoUrl = "/eyefemm_pic_uploads/a3d06283-3588-47bd-b72e-8fe5ff5799e2.png";
     const logoResponse = await fetch(logoUrl);
     
     if (!logoResponse.ok) {
       // Try the fallback URL
-      const fallbackLogoResponse = await fetch('/lovable-uploads/e2b16d7e-6663-42fc-bd9b-68fed360f249.png');
+      const fallbackLogoResponse = await fetch('/eyefemm_pic_uploads/e2b16d7e-6663-42fc-bd9b-68fed360f249.png');
       if (!fallbackLogoResponse.ok) {
         throw new Error(`Failed to fetch logo from both sources`);
       }

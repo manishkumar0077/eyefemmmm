@@ -5,7 +5,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { Card } from '@/components/ui/card';
 import { 
   Loader2, Plus, Trash2, Save, AlertTriangle, 
-  Upload, MoveUp, MoveDown, Image as ImageIcon 
+  Upload, MoveUp, MoveDown, Image as ImageIcon, Pencil 
 } from 'lucide-react';
 import { toast } from 'sonner';
 import { useClinicImages, ClinicImage } from '@/hooks/useClinicImages';
@@ -13,9 +13,13 @@ import { Label } from '@/components/ui/label';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogFooter, DialogDescription } from '@/components/ui/dialog';
 
 export const GalleryImagesEditor = () => {
-  const { images, isLoading, error, updateImage, deleteImage, uploadImage, reorderImages } = useClinicImages();
+  const { images, isLoading, error, updateImage, updateImageFile, deleteImage, uploadImage, reorderImages } = useClinicImages();
   const [editingImage, setEditingImage] = useState<string | null>(null);
   const [isAddDialogOpen, setIsAddDialogOpen] = useState(false);
+  const [isImageEditDialogOpen, setIsImageEditDialogOpen] = useState(false);
+  const [imageToEdit, setImageToEdit] = useState<number | null>(null);
+  const [selectedEditFile, setSelectedEditFile] = useState<File | null>(null);
+  const imageEditFileInputRef = useRef<HTMLInputElement>(null);
   const [newImage, setNewImage] = useState({ title: '', description: '' });
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
   const [editData, setEditData] = useState<{[key: string]: {title: string, description: string}}>({});
@@ -93,6 +97,50 @@ export const GalleryImagesEditor = () => {
     const files = event.target.files;
     if (files && files.length > 0) {
       setSelectedFile(files[0]);
+    }
+  };
+
+  const handleEditFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const files = event.target.files;
+    if (files && files.length > 0) {
+      setSelectedEditFile(files[0]);
+    }
+  };
+  
+  const handleEditImageClick = (id: number) => {
+    setImageToEdit(id);
+    setIsImageEditDialogOpen(true);
+    setSelectedEditFile(null);
+    if (imageEditFileInputRef.current) {
+      imageEditFileInputRef.current.value = '';
+    }
+  };
+  
+  const handleUpdateImageFile = async () => {
+    if (!selectedEditFile || !imageToEdit) {
+      toast.error('Please select a file');
+      return;
+    }
+
+    setUploading(true);
+    try {
+      const success = await updateImageFile(imageToEdit, selectedEditFile);
+      if (success) {
+        toast.success('Image file updated successfully!');
+        setSelectedEditFile(null);
+        setIsImageEditDialogOpen(false);
+        setImageToEdit(null);
+        if (imageEditFileInputRef.current) {
+          imageEditFileInputRef.current.value = '';
+        }
+      } else {
+        toast.error('Failed to update image file.');
+      }
+    } catch (err) {
+      console.error('Error updating image file:', err);
+      toast.error('An error occurred while updating the image file.');
+    } finally {
+      setUploading(false);
     }
   };
 
@@ -186,12 +234,15 @@ export const GalleryImagesEditor = () => {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {images.map((image, index) => (
           <Card key={image.id} className="overflow-hidden">
-            <div className="aspect-square relative">
+            <div className="aspect-square relative group cursor-pointer" onClick={() => handleEditImageClick(image.id)}>
               <img 
                 src={image.src} 
                 alt={image.title}
                 className="w-full h-full object-cover"
               />
+              <div className="absolute inset-0 bg-black bg-opacity-0 flex items-center justify-center transition-all duration-200 group-hover:bg-opacity-30">
+                <Pencil className="text-white opacity-0 group-hover:opacity-100 h-8 w-8" />
+              </div>
             </div>
             
             <div className="p-4">
@@ -402,8 +453,93 @@ export const GalleryImagesEditor = () => {
           </DialogFooter>
         </DialogContent>
       </Dialog>
+
+      {/* Image Edit Dialog */}
+      <Dialog open={isImageEditDialogOpen} onOpenChange={setIsImageEditDialogOpen}>
+        <DialogContent className="max-w-md">
+          <DialogHeader>
+            <DialogTitle>Update Gallery Image</DialogTitle>
+            <DialogDescription>
+              Select a new image file to replace the current image.
+            </DialogDescription>
+          </DialogHeader>
+          
+          <div className="space-y-4 py-4">
+            <div>
+              <Label htmlFor="edit-image-file">Select New Image</Label>
+              <div className="mt-1 border-2 border-dashed rounded-lg p-6 flex flex-col items-center justify-center bg-muted/50">
+                {selectedEditFile ? (
+                  <div className="text-center space-y-2">
+                    <ImageIcon className="h-8 w-8 mx-auto text-gray-400" />
+                    <p className="text-sm font-medium">{selectedEditFile.name}</p>
+                    <p className="text-xs text-gray-500">
+                      {(selectedEditFile.size / 1024 / 1024).toFixed(2)} MB
+                    </p>
+                    <Button 
+                      variant="outline" 
+                      size="sm"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setSelectedEditFile(null);
+                        if (imageEditFileInputRef.current) imageEditFileInputRef.current.value = '';
+                      }}
+                    >
+                      Change
+                    </Button>
+                  </div>
+                ) : (
+                  <div className="text-center space-y-2">
+                    <Upload className="h-8 w-8 mx-auto text-gray-400" />
+                    <p className="text-sm">Drag and drop or click to select</p>
+                    <p className="text-xs text-gray-500">JPG, PNG or GIF up to 5MB</p>
+                  </div>
+                )}
+                <input 
+                  type="file" 
+                  id="edit-image-file"
+                  ref={imageEditFileInputRef}
+                  accept="image/*"
+                  className={selectedEditFile ? "hidden" : "absolute inset-0 w-full h-full opacity-0 cursor-pointer"}
+                  onChange={handleEditFileChange}
+                />
+              </div>
+            </div>
+          </div>
+          
+          <DialogFooter>
+            <Button 
+              variant="outline" 
+              onClick={() => {
+                setIsImageEditDialogOpen(false);
+                setSelectedEditFile(null);
+                setImageToEdit(null);
+                if (imageEditFileInputRef.current) imageEditFileInputRef.current.value = '';
+              }}
+            >
+              Cancel
+            </Button>
+            <Button
+              onClick={handleUpdateImageFile}
+              disabled={uploading || !selectedEditFile}
+              className="bg-primary hover:bg-primary/90"
+            >
+              {uploading ? (
+                <>
+                  <Loader2 className="h-4 w-4 mr-2 animate-spin" />
+                  Updating...
+                </>
+              ) : (
+                <>
+                  <Upload className="h-4 w-4 mr-2" />
+                  Update Image
+                </>
+              )}
+            </Button>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 };
 
-export default GalleryImagesEditor; 
+export default GalleryImagesEditor;

@@ -29,7 +29,7 @@ const EyeCareHome = () => {
   
   const handleImageError = (e: React.SyntheticEvent<HTMLImageElement, Event>) => {
     console.log("Image failed to load:", e.currentTarget.src);
-    e.currentTarget.src = "/lovable-uploads/default-image.png";
+    e.currentTarget.src = "/eyefemm_pic_uploads/default-image.png";
   };
 
   const getImageUrl = (index: number, defaultAlt: string) => {
@@ -42,7 +42,7 @@ const EyeCareHome = () => {
     }
     console.log(`No image at index ${index}, using default`);
     return {
-      url: "/lovable-uploads/default-image.png",
+      url: "/eyefemm_pic_uploads/default-image.png",
       alt: defaultAlt
     };
   };

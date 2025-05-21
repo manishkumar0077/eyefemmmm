@@ -334,7 +334,7 @@ export const DoctorTreatmentsEditor = () => {
                         alt="Treatment Preview" 
                         className="w-full h-full object-cover"
                         onError={(e) => {
-                          e.currentTarget.src = "/lovable-uploads/default-image.png";
+                          e.currentTarget.src = "/eyefemm_pic_uploads/default-image.png";
                         }}
                       />
                       <div className="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
@@ -494,7 +494,7 @@ export const DoctorTreatmentsEditor = () => {
                         alt="Treatment Preview" 
                         className="w-full h-full object-cover"
                         onError={(e) => {
-                          e.currentTarget.src = "/lovable-uploads/default-image.png";
+                          e.currentTarget.src = "/eyefemm_pic_uploads/default-image.png";
                         }}
                       />
                       <div className="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">

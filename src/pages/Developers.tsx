@@ -18,21 +18,21 @@ const Developers = () => {
   const developers = [{
     name: "Shubham Malhotra",
     email: "malhotrashubham144@gmail.com",
-    image: "/lovable-uploads/shubham-new.jpg",
+    image: "/eyefemm_pic_uploads/shubham-new.jpg",
     role: "Lead Developer",
     linkedin: "https://www.linkedin.com/in/shubham-malhotra-302631291/",
     description: "Passionate about creating intuitive healthcare solutions"
   }, {
     name: "Sarthak Srivastava",
     email: "Sarthaksrivastava06052003@gmail.com",
-    image: "/lovable-uploads/sarthak-new.jpg",
+    image: "/eyefemm_pic_uploads/sarthak-new.jpg",
     role: "Backend Developer",
     linkedin: "https://www.linkedin.com/in/sarthak-srivastava-11044b271/",
     description: "Expert in building robust and scalable backend systems"
   }, {
     name: "Naman Verma",
     email: "Kr.naman007@gmail.com",
-    image: "/lovable-uploads/naman-new.jpg",
+    image: "/eyefemm_pic_uploads/naman-new.jpg",
     role: "Frontend Developer",
     linkedin: "https://www.linkedin.com/in/naman-verma-933184271/",
     description: "Specializing in creating beautiful and responsive user interfaces"
@@ -45,7 +45,7 @@ const Developers = () => {
           <div className="flex items-center justify-between">
             <Link to="/" className="flex items-center space-x-2">
               <img 
-                src="/lovable-uploads/6c43213d-6d60-4790-b8ff-d662e634ee59.png"
+                src="/eyefemm_pic_uploads/6c43213d-6d60-4790-b8ff-d662e634ee59.png"
                 alt="EyeFem Logo"
                 className="h-12 sm:h-14 md:h-16 w-auto"
               />
