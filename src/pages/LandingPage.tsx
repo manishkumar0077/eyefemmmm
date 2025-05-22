@@ -86,6 +86,7 @@ const LandingPage = () => {
             <Link to="/specialties" className="text-gray-800 hover:text-primary transition-colors">Our Specialties</Link>
             <Link to="/eyecare" className="text-gray-800 hover:text-primary transition-colors">Eye Care</Link>
             <Link to="/gynecology" className="text-gray-800 hover:text-primary transition-colors">Gynecology</Link>
+            <Link to="/admin" className="text-gray-800 hover:text-primary transition-colors">Admin</Link>
             <Link to="/specialties">
               <Button className="rounded-full px-5 py-2 bg-primary hover:bg-primary/90">
                 Get Started
@@ -98,6 +99,7 @@ const LandingPage = () => {
         {mobileMenuOpen && (
           <div className="md:hidden bg-white shadow-md py-4 px-6 absolute w-full">
             <nav className="flex flex-col space-y-4">
+              <Link to="/admin" className="text-gray-800 hover:text-primary transition-colors" onClick={closeMobileMenu}>Admin</Link>
               <Link to="/" className="text-gray-800 hover:text-primary transition-colors py-2" onClick={closeMobileMenu}>
                 Home
               </Link>

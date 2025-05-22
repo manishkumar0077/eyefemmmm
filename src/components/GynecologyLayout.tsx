@@ -1,8 +1,7 @@
-import { ReactNode } from 'react';
+import { ReactNode, useEffect } from 'react';
 import GynecologyNavbar from './GynecologyNavbar';
 import Footer from './Footer';
 import PageTransition from './PageTransition';
-import WhatsAppChat from './WhatsAppChat';
 
 interface GynecologyLayoutProps {
   children: ReactNode;
@@ -17,8 +16,10 @@ const GynecologyLayout = ({ children }: GynecologyLayoutProps) => {
           {children}
         </main>
         <Footer />
-        {/* WhatsApp Chat Widget - will only show on gynecology pages */}
-        <WhatsAppChat className="fixed bottom-4 right-4 z-50" />
+        {/* Elfsight WhatsApp Chat Widget */}
+        <div className="fixed bottom-4 right-4 z-50">
+          <div className="elfsight-app-f5987c20-7de0-4b19-a688-ad23bc2c6457" data-elfsight-app-lazy></div>
+        </div>
       </div>
     </PageTransition>
   );
